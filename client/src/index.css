@@ -14,3 +14,7 @@
 .rubik {
   font-family: "Rubik", sans-serif;
 }
+
+input[type="checkbox"] {
+  accent-color: #ea6a11;
+}
