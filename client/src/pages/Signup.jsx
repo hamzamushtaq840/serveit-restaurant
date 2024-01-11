@@ -1,13 +1,13 @@
 import React from "react"
-import background from "./../assets/login/background.png"
-import google from "./../assets/login/google.svg"
-import logo from "./../assets/logo.svg"
-import Input from "../components/generic/Input"
-import { useNavigate } from "react-router-dom"
 import toast from "react-hot-toast"
+import { useNavigate } from "react-router-dom"
+import Input from "../components/generic/Input"
+import background from "./../assets/login/background.png"
+import logo from "./../assets/logo.svg"
 
-const Login = () => {
+const Signup = () => {
   const navigate = useNavigate()
+
   return (
     <div className="bg-primaryBg flex h-[100vh] ">
       {/* left-section */}
@@ -15,18 +15,24 @@ const Login = () => {
         {/* card */}
         <div className="shadow-login z-20 flex h-full max-h-[802px] w-[90%] min-w-[401px] flex-col items-center rounded-2xl bg-white">
           <img src={logo} className="mb-8 mt-[7%]" alt="" />
-          <p className="rubik mb-4 text-4xl font-bold leading-9">
-            Welcome back!
-          </p>
-          <span className="mb-12 text-base font-medium">
+          <p className="rubik mb-4 text-4xl font-bold leading-9">Register</p>
+          <span className="mb-4 text-base font-medium">
             Please enter your details
           </span>
+          <Input
+            label={"Company Name"}
+            name={"email"}
+            type={"email"}
+            placeholder={"Email"}
+            width={"70%"}
+          />
           <Input
             label={"Email Address"}
             name={"email"}
             type={"email"}
             placeholder={"Email"}
             width={"70%"}
+            mt={"10px"}
           />
           <Input
             label={"Password"}
@@ -34,40 +40,32 @@ const Login = () => {
             type={"password"}
             placeholder={"Password"}
             width={"70%"}
-            mt={"20px"}
+            mt={"10px"}
           />
-          <div className="mt-2 flex w-[70%] justify-between">
-            <div className="flex items-center gap-1">
-              <input type="checkbox" name="rememberMe" />
-              <label htmlFor="rememberMe" className="mt-[-2px]">
-                Remember Me
-              </label>
-            </div>
-
-            <div
-              onClick={() => navigate("/forgot-password")}
-              className="text-grey cursor-pointer text-xs hover:text-black">
-              Forgot password?
-            </div>
-          </div>
+          <Input
+            label={"Confirm Password"}
+            name={"confirmPassword"}
+            type={"password"}
+            placeholder={"Confirm Password"}
+            width={"70%"}
+            mt={"10px"}
+          />
           <button
             onClick={() => {
-              toast.success("Login Successfull")
-              navigate("/dashboard")
+              toast.success("Check your email to verify")
+              navigate("/")
             }}
             className="bg-primary mb-4 mt-10 h-12 w-[70%] rounded-3xl font-medium text-white">
-            Login
-          </button>
-          <button className="bg-secondary flex h-12 w-[70%] items-center justify-center gap-2 rounded-3xl font-medium text-black">
-            <img src={google} alt="" />
-            <span>Continue with Google</span>
+            Signup
           </button>
           <span className="flex flex-1 items-center pb-2">
-            <span className="text-grey">Don’t have an account? &nbsp;</span>{" "}
+            <span className="text-grey">Already have an account? &nbsp;</span>{" "}
             <span
               className="cursor-pointer hover:underline"
-              onClick={() => navigate("/signup")}>
-              Sign Up
+              onClick={() => {
+                navigate("/")
+              }}>
+              Login
             </span>
           </span>
         </div>
@@ -81,4 +79,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Signup
