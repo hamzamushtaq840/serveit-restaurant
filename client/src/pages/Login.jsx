@@ -1,19 +1,19 @@
 import React from "react"
+import toast from "react-hot-toast"
+import { useNavigate } from "react-router-dom"
+import Input from "../components/generic/Input"
 import background from "./../assets/login/background.png"
 import google from "./../assets/login/google.svg"
 import logo from "./../assets/logo.svg"
-import Input from "../components/generic/Input"
-import { useNavigate } from "react-router-dom"
-import toast from "react-hot-toast"
 
 const Login = () => {
   const navigate = useNavigate()
   return (
-    <div className="bg-primaryBg flex h-[100vh] ">
+    <div className="flex h-[100vh] bg-primaryBg ">
       {/* left-section */}
       <div className="flex h-full w-[40%] items-center justify-center p-6">
         {/* card */}
-        <div className="shadow-login z-20 flex h-full max-h-[802px] w-[90%] min-w-[401px] flex-col items-center rounded-2xl bg-white">
+        <div className="z-20 flex h-full max-h-[802px] w-[90%] min-w-[401px] flex-col items-center rounded-2xl bg-white shadow-login">
           <img src={logo} className="mb-8 mt-[7%]" alt="" />
           <p className="rubik mb-4 text-4xl font-bold leading-9">
             Welcome back!
@@ -46,7 +46,7 @@ const Login = () => {
 
             <div
               onClick={() => navigate("/forgot-password")}
-              className="text-grey cursor-pointer text-xs hover:text-black">
+              className="cursor-pointer text-xs text-grey hover:text-black">
               Forgot password?
             </div>
           </div>
@@ -55,10 +55,10 @@ const Login = () => {
               toast.success("Login Successfull")
               navigate("/dashboard")
             }}
-            className="bg-primary mb-4 mt-10 h-12 w-[70%] rounded-3xl font-medium text-white">
+            className="mb-4 mt-10 h-12 w-[70%] rounded-3xl bg-primary font-medium text-white">
             Login
           </button>
-          <button className="bg-secondary flex h-12 w-[70%] items-center justify-center gap-2 rounded-3xl font-medium text-black">
+          <button className="flex h-12 w-[70%] items-center justify-center gap-2 rounded-3xl bg-secondary font-medium text-black">
             <img src={google} alt="" />
             <span>Continue with Google</span>
           </button>
@@ -75,7 +75,12 @@ const Login = () => {
 
       {/* right-section */}
       <div className="z-10 h-full w-[60%]">
-        <img src={background} className="h-[100%] w-[100%]" alt="" />
+        <img
+          src={background}
+          loading="lazy"
+          className="h-[100%] w-[100%]"
+          alt=""
+        />
       </div>
     </div>
   )

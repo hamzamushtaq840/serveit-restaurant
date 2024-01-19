@@ -9,6 +9,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Outfit", sans-serif;
+  scroll-behavior: smooth;
 }
 
 .rubik {
@@ -17,4 +18,13 @@
 
 input[type="checkbox"] {
   accent-color: #ea6a11;
+}
+
+.active g {
+  fill: #ea6a11;
+}
+
+.active path {
+  stroke: #ea6a11;
+  stroke-width: 2px;
 }

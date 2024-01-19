@@ -15,7 +15,10 @@ export default {
       },
       boxShadow: {
         login: "0px 4px 28.4px 0px rgba(234, 106, 18, 0.25)",
-        login: "0px 4px 28.4px 0px rgba(234, 106, 18, 0.25)",
+        navbar: "rgba(0, 0, 0, 0.09) 0px 3px 5px;",
+        card: "rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;",
+        cardMenu: "rgba(0, 0, 0, 0.1) 0px 4px 12px;",
+        cardImage: "0px 4px 20px 0px rgba(234, 106, 18, 0.80);",
       },
     },
   },
