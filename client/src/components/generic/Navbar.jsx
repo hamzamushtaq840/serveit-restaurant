@@ -9,9 +9,9 @@ const Navbar = () => {
   const location = useLocation()
 
   return (
-    <div className="flex min-h-[100vh] bg-[#F8F8FB]">
+    <div className="flex min-h-[100vh] bg-secondary">
       <nav className="shadow-navbar fixed bottom-4 left-4 top-4 mr-0 w-[250px] overflow-auto rounded-lg bg-white p-4">
-        <img src={logo} className="mx-auto mb-8 " alt="" />
+        <img src={logo} className="mx-auto mb-8 h-[70px]" alt="" />
         <hr />
         <div className="gap flex w-full flex-col gap-1 pt-4">
           {navItems.map((v, i) => {
@@ -34,7 +34,7 @@ const Navbar = () => {
       </nav>
       <main className="ml-[250px] flex flex-1 flex-col pl-4">
         <header
-          className={`sticky top-0 z-50 flex h-[69px] items-center justify-between border-b border-[#D3D3D3] bg-[#F8F8FB] p-6 shadow-sm`}>
+          className={`sticky top-0 z-50 flex h-[69px] items-center justify-between border-b border-[#D3D3D3] bg-secondary p-6 shadow-sm`}>
           <span className="text-xl font-medium">
             {trimmedName(location.pathname)}
           </span>
