@@ -1,8 +1,10 @@
 import React from "react"
 import next from "../../assets/next.svg"
 import CategoryItems from "./CategoryItems"
+import AddCategory from "./AddCategory"
 
 const Categories = () => {
+  const [open, setOpen] = React.useState(false)
   return (
     <div className="flex flex-1 flex-col">
       <div className="flex items-center justify-between">
@@ -15,11 +17,14 @@ const Categories = () => {
             <img src={next} alt="" />
           </div>
         </div>
-        <button className="h-[30px] rounded-lg bg-primary px-8 text-sm text-white hover:bg-primary/80">
+        <button
+          onClick={() => setOpen(true)}
+          className="h-[30px] rounded-lg bg-primary px-8 text-sm text-white hover:bg-primary/80">
           Add
         </button>
       </div>
       <CategoryItems />
+      {open && <AddCategory setOpen={setOpen} />}
     </div>
   )
 }

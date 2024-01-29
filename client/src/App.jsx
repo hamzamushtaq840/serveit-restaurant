@@ -7,6 +7,7 @@ import ResetPassword from "./pages/ResetPassword"
 import Signup from "./pages/Signup"
 import Navbar from "./components/generic/Navbar"
 import Menu from "./pages/Menu"
+import TipsManager from "./pages/TipsManager"
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route element={<Navbar />}>
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="menu" element={<Menu />} />
+          <Route path="tips-manager" element={<TipsManager />} />
         </Route>
       </Route>
     </Routes>

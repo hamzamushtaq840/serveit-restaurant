@@ -33,7 +33,7 @@ export const navItems = [
   {
     name: "Tips Manager",
     image: <TipsManager />,
-    to: "/ssajd",
+    to: "/tips-manager",
   },
   {
     name: "Reviews",

@@ -20,12 +20,12 @@ const MenuItems = () => {
           Add
         </button>
       </div>
-      <div className="mt-28 grid flex-1 grid-cols-6 gap-x-6 gap-y-28">
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(v => (
-          <div className="shadow-cardMenu group relative flex cursor-pointer flex-col items-center justify-center rounded-lg bg-[#ffffff] p-2 transition-all duration-150 hover:bg-primary/65 hover:text-white">
+      <div className="mt-28 grid flex-1 grid-cols-5 gap-x-6 gap-y-28">
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(v => (
+          <div className="group relative flex cursor-pointer flex-col items-center justify-center rounded-lg bg-[#ffffff] p-2 shadow-cardMenu transition-all duration-150 hover:bg-primary/65 hover:text-white">
             <img
               src={menuItem}
-              className="shadow-navbar absolute left-1/2 top-[-30px] h-[100px] w-[85%] -translate-x-1/2 -translate-y-1/2 transform rounded-md object-cover"
+              className="absolute left-1/2 top-[-30px] h-[100px] w-[85%] -translate-x-1/2 -translate-y-1/2 transform rounded-md object-cover shadow-navbar"
               alt="item"
             />
             <span className="mt-6 font-semibold">Burger ‘Wanted’</span>
