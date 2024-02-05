@@ -1,12 +1,16 @@
 import { Route, Routes } from "react-router-dom"
+import Navbar from "./components/generic/Navbar"
 import AuthGuard from "./guards/AuthGuard"
+import Customers from "./pages/Customers"
 import Dashboard from "./pages/Dashboard"
+import Employees from "./pages/Employees"
 import ForgotPassword from "./pages/ForgotPassword"
 import Login from "./pages/Login"
+import Menu from "./pages/Menu"
+import Orders from "./pages/Orders"
 import ResetPassword from "./pages/ResetPassword"
 import Signup from "./pages/Signup"
-import Navbar from "./components/generic/Navbar"
-import Menu from "./pages/Menu"
+import TableManager from "./pages/TableManager"
 import TipsManager from "./pages/TipsManager"
 
 function App() {
@@ -22,6 +26,11 @@ function App() {
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="menu" element={<Menu />} />
           <Route path="tips-manager" element={<TipsManager />} />
+          <Route path="table-manager" element={<TableManager />} />
+          <Route path="orders" element={<Orders />} />
+          <Route path="customers" element={<Customers />} />
+          {/* <Route path="reviews" element={<Reviews />} /> */}
+          <Route path="employees" element={<Employees />} />
         </Route>
       </Route>
     </Routes>

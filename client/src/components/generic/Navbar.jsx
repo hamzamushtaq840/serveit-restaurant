@@ -2,18 +2,18 @@ import React, { useEffect, useState } from "react"
 import { NavLink, Outlet, useLocation } from "react-router-dom"
 import logo from "./../../assets/logo.svg"
 import avatar from "./../../assets/avatar.svg"
-import { navItems } from "../../utils/navItems"
 import { trimmedName } from "../../utils/trimLocationName"
+import { navItems } from "../../utils/navItems"
 
 const Navbar = () => {
   const location = useLocation()
 
   return (
     <div className="flex min-h-[100vh] bg-secondary">
-      <nav className="shadow-navbar fixed bottom-4 left-4 top-4 mr-0 w-[250px] overflow-auto rounded-lg bg-white p-4">
-        <img src={logo} className="mx-auto mb-8 h-[70px]" alt="" />
+      <nav className="fixed bottom-4 left-4 top-4 w-[250px] overflow-auto rounded-lg bg-white px-4 shadow-navbar">
+        <img src={logo} className="mx-auto my-3 h-[60px]" alt="" />
         <hr />
-        <div className="gap flex w-full flex-col gap-1 pt-4">
+        <div className="gap flex w-full flex-col gap-1 p-2">
           {navItems.map((v, i) => {
             return (
               <NavLink
@@ -32,9 +32,9 @@ const Navbar = () => {
           })}
         </div>
       </nav>
-      <main className="ml-[250px] flex flex-1 flex-col pl-4">
+      <main className="ml-[266px] flex max-w-[calc(100vw-266px)] flex-1 flex-col ">
         <header
-          className={`sticky top-0 z-50 flex h-[69px] items-center justify-between border-b border-[#D3D3D3] bg-secondary p-6 shadow-sm`}>
+          className={`border-[#D3D3D3 sticky top-0 z-30 flex h-[69px] items-center justify-between border-b bg-secondary p-6 shadow-sm`}>
           <span className="text-xl font-medium">
             {trimmedName(location.pathname)}
           </span>

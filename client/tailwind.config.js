@@ -8,6 +8,7 @@ export default {
       colors: {
         primaryBg: "#FDF6E4",
         primary: "#EA6A11",
+        primarySub: "#E99A63",
         secondary: "#FDF5EA",
         focus: "#eda677",
         ring: "#9E9E9E",

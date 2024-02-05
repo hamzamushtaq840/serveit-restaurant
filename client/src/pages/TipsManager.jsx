@@ -1,5 +1,8 @@
-import React, { useMemo, useState } from "react"
 import { MaterialReactTable, useMaterialReactTable } from "material-react-table"
+import React, { useMemo, useState } from "react"
+import { CiViewList } from "react-icons/ci"
+import { FaDollarSign } from "react-icons/fa"
+import TipsHistoryModal from "../components/tipsManager/TipsHistoryModal"
 import { tableBody, tableHeader } from "../utils/consts"
 
 //simple data example - Check out https://www.material-react-table.com/docs/examples/remote for a more complex example
@@ -15,7 +18,7 @@ const data = [
 ]
 
 export default function TipsManager() {
-  const [rowSelection, setRowSelection] = useState({})
+  const [historyModal, setHistoryModal] = useState(false)
 
   const columns = useMemo(
     () => [
@@ -34,8 +37,21 @@ export default function TipsManager() {
         muiTableBodyCellProps: tableBody,
       },
       {
-        accessorFn: row => row.age,
-        accessorKey: "age",
+        accessorFn: row => (
+          <div className="gap- flex items-center justify-center gap-2">
+            <button className="flex items-center justify-center rounded-md bg-[#FFF0C7] px-2 py-[2px] text-primary">
+              Pay Tip
+              <FaDollarSign />
+            </button>
+            <button
+              onClick={() => setHistoryModal(true)}
+              className="flex items-center justify-center gap-1 rounded-md bg-[#E9E9E9] px-2 py-[2px] ">
+              History
+              <CiViewList className="text-[18px]" />
+            </button>
+          </div>
+        ),
+        accessorKey: "action",
         header: "Actions",
         muiTableHeadCellProps: tableHeader,
         muiTableBodyCellProps: tableBody,
@@ -46,26 +62,21 @@ export default function TipsManager() {
 
   const table = useMaterialReactTable({
     enableDensityToggle: false,
-    // enableRowSelection: true,
     enableFullScreenToggle: false,
     enableColumnActions: false,
-    // muiSearchTextFieldProps: {
-    //   color: "red",
-    // },
-    // muiPaginationProps: {
-    //   color: "secondary",
-    //   rowsPerPageOptions: [10, 20, 30],
-    //   shape: "rounded",
-    //   variant: "outlined",
-    // },
-    // onRowSelectionChange: e => console.log(e),
     data,
     columns,
+    defaultColumn: {
+      minSize: 100, //allow columns to get smaller than default
+      maxSize: 9001, //allow columns to get larger than default
+      size: 100, //make columns wider by default
+    },
   })
 
   return (
-    <div className="p-8">
+    <div className="p-6">
       <MaterialReactTable table={table} />
+      {historyModal && <TipsHistoryModal setModal={setHistoryModal} />}
     </div>
   )
 }
