@@ -1,16 +1,13 @@
-import Admins from "../assets/navbar/Admins"
+import { LuClock9 } from "react-icons/lu"
 import Customers from "../assets/navbar/Customers"
-import Order from "../assets/navbar/Order"
-import Reviews from "../assets/navbar/Reviews"
-import Rewards from "../assets/navbar/Rewards"
-import Settings from "../assets/navbar/Settings"
-import TipsManager from "../assets/navbar/TipsManager"
 import DashboardIcon from "../assets/navbar/DashboardIcon"
 import Menu from "../assets/navbar/Menu"
+import Order from "../assets/navbar/Order"
+import Rewards from "../assets/navbar/Rewards"
+import Settings from "../assets/navbar/Settings"
 import TableManager from "../assets/navbar/TableManager"
-import { IoTimeOutline } from "react-icons/io5"
-import { FaClock } from "react-icons/fa"
-import { LuClock9 } from "react-icons/lu"
+import TipsManager from "../assets/navbar/TipsManager"
+import Reviews from "../assets/navbar/Reviews"
 
 export const navItems = [
   {
@@ -27,6 +24,11 @@ export const navItems = [
     name: "Table Manager",
     image: <TableManager />,
     to: "/table-manager",
+  },
+  {
+    name: "Chair Manager",
+    image: <TableManager />,
+    to: "/chair-manager",
   },
   {
     name: "Orders",
@@ -49,23 +51,19 @@ export const navItems = [
     to: "/employees",
   },
   {
-    name: "TimeSheet",
-    image: (
-      <div className="">
-        <LuClock9 className="h-[17px] w-[17px]" />
-      </div>
-    ),
+    name: "Time Sheet",
+    image: <LuClock9 className="h-[17px] w-[17px]" />,
     to: "/timesheet",
+  },
+  {
+    name: "Reviews",
+    image: <Reviews />,
+    to: "/reviews",
   },
   {
     name: "Rewards",
     image: <Rewards />,
     to: "/rewards",
-  },
-  {
-    name: "Admins",
-    image: <Admins />,
-    to: "/admins",
   },
   {
     name: "Settigs",

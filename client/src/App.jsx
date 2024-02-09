@@ -12,6 +12,11 @@ import ResetPassword from "./pages/ResetPassword"
 import Signup from "./pages/Signup"
 import TableManager from "./pages/TableManager"
 import TipsManager from "./pages/TipsManager"
+import TimeSheet from "./pages/TimeSheet"
+import Rewards from "./pages/Rewards"
+import Settings from "./pages/Settings"
+import Reviews from "./pages/Reviews"
+import ChairManager from "./pages/ChairManager"
 
 function App() {
   return (
@@ -27,10 +32,14 @@ function App() {
           <Route path="menu" element={<Menu />} />
           <Route path="tips-manager" element={<TipsManager />} />
           <Route path="table-manager" element={<TableManager />} />
+          <Route path="chair-manager" element={<ChairManager />} />
           <Route path="orders" element={<Orders />} />
           <Route path="customers" element={<Customers />} />
-          {/* <Route path="reviews" element={<Reviews />} /> */}
+          <Route path="reviews" element={<Reviews />} />
           <Route path="employees" element={<Employees />} />
+          <Route path="timesheet" element={<TimeSheet />} />
+          <Route path="rewards" element={<Rewards />} />
+          <Route path="settings" element={<Settings />} />
         </Route>
       </Route>
     </Routes>

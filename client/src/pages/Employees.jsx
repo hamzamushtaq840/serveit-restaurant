@@ -7,8 +7,11 @@ const Employees = () => {
   const [currentTab, setCurrentTab] = useState("kitchenUsers")
 
   const tabs = {
+    admins: <Servers />,
     kitchenUsers: <KitchenUsers />,
     servers: <Servers />,
+    hosts: <Servers />,
+    managers: <Servers />,
   }
 
   const renderTab = () => {
