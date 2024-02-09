@@ -20,7 +20,7 @@ const data = [
   },
   {
     orderId: 2,
-    customerName: "John",
+    customerName: "Sara",
     location: "T25",
     status: "Accepted",
     amount: 2000,
@@ -30,7 +30,7 @@ const data = [
   },
   {
     orderId: 3,
-    customerName: "John",
+    customerName: "Maryam",
     location: "T25",
     status: "Ready",
     amount: 3000,
@@ -40,7 +40,7 @@ const data = [
   },
   {
     orderId: 4,
-    customerName: "John",
+    customerName: "Hamza",
     location: "T25",
     status: "Preparing",
     amount: 4000,
@@ -50,7 +50,7 @@ const data = [
   },
   {
     orderId: 5,
-    customerName: "John",
+    customerName: "Brandon",
     location: "T25",
     status: "Canceled",
     amount: 5000,
@@ -60,7 +60,7 @@ const data = [
   },
   {
     orderId: 6,
-    customerName: "John",
+    customerName: "Gigi",
     location: "T25",
     status: "Completed",
     amount: 6000,

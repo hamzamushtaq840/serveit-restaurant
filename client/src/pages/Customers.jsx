@@ -51,27 +51,6 @@ export default function Customers() {
         muiTableBodyCellProps: tableBody,
       },
       {
-        accessorFn: row => (
-          <div
-            className={`
-            ${
-              row.status === "Active" &&
-              "mx-auto max-w-[120px] rounded-md bg-[#ECFFBA] py-1 text-[#80AF00]"
-            }
-            ${
-              row.status === "Blocked" &&
-              "mx-auto max-w-[120px] rounded-md bg-[#FFE4DE] py-1 text-[#B71D18]"
-            }
-            `}>
-            {row.status}
-          </div>
-        ),
-        accessorKey: "status", //simple recommended way to define a column
-        header: "Status",
-        muiTableHeadCellProps: tableHeader,
-        muiTableBodyCellProps: tableBody,
-      },
-      {
         accessorKey: "orders",
         header: "Orders",
         muiTableHeadCellProps: tableHeader,
@@ -80,28 +59,6 @@ export default function Customers() {
       {
         accessorKey: "amountSpent",
         header: "Amount Spent",
-        muiTableHeadCellProps: tableHeader,
-        muiTableBodyCellProps: tableBody,
-      },
-      {
-        accessorFn: row => (
-          <div className="flex items-center justify-center gap-2">
-            {row.status === "Active" && (
-              <TbLock
-                className="h-[27px] w-[27px] cursor-pointer rounded-full p-1 text-red-500 hover:bg-red-200"
-                onClick={() => {}}
-              />
-            )}
-            {row.status === "Blocked" && (
-              <TbLockOpen
-                className="h-[27px] w-[27px] cursor-pointer rounded-full p-1 text-blue-500 hover:bg-blue-200"
-                onClick={() => {}}
-              />
-            )}
-          </div>
-        ),
-        accessorKey: "action",
-        header: "Actions",
         muiTableHeadCellProps: tableHeader,
         muiTableBodyCellProps: tableBody,
       },

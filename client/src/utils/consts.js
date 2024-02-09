@@ -2,6 +2,7 @@ export const tableHeader = {
   sx: {
     color: "white",
     fontWeight: 500,
+    backgroundColor: "#e99a63",
   },
   align: "center",
 }
