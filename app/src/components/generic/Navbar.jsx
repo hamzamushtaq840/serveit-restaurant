@@ -15,7 +15,9 @@ const Navbar = () => {
       <div onClick={() => setShowMenu(!showMenu)} className="w-[60px]">
         <IoMenu className="h-6 w-6" />
       </div>
-      <div className=" flex flex-1 justify-center text-lg font-semibold">
+      <div
+        onClick={() => navigate("/dashboard")}
+        className="flex flex-1 justify-center text-lg font-semibold">
         {restaurentName}
       </div>
       <div className="flex w-[60px] items-center gap-3">

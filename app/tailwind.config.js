@@ -24,6 +24,7 @@ export default {
       boxShadow: {
         itemOptions: "rgba(0, 0, 0, 0.16) 0px 1px 4px;",
         bottomBar: "0px -4px 11px 0px rgba(0,0,0,0.05)",
+        topBar: "0px 7px 5px 0px rgba(0,0,0,0.02);",
       },
     },
   },

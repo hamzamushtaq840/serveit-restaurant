@@ -5,7 +5,7 @@ import { RxCross2 } from "react-icons/rx"
 
 const CartItem = ({ item }) => {
   return (
-    <div className="flex gap-3 rounded-lg bg-greyBg p-2">
+    <div className="flex gap-3 rounded-lg bg-[#cccccc28] p-2">
       <img
         src={item.image}
         className="h-20 w-20 rounded-md object-cover"

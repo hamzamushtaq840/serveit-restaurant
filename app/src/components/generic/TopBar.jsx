@@ -6,7 +6,7 @@ const TopBar = ({ content }) => {
   const navigate = useNavigate()
 
   return (
-    <div className="flex items-center px-4">
+    <div className="shadow-topBar fixed top-0 z-[80] flex w-full items-center justify-between bg-white px-4 pb-4 pt-3">
       <div className="w-[60px]">
         <IoChevronBackCircleOutline
           className="h-6 w-6"
