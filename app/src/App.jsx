@@ -6,6 +6,7 @@ import Dashboard from "./pages/Dashboard"
 import MenuItemDetail from "./pages/MenuItemDetail"
 import Cart from "./pages/Cart"
 import Rewards from "./pages/Rewards"
+import SelectMethod from "./pages/SelectMethod"
 
 function App() {
   useEffect(() => {
@@ -34,6 +35,7 @@ function App() {
       <Route path="/item-detail" element={<MenuItemDetail />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/rewards" element={<Rewards />} />
+      <Route path="/select-method" element={<SelectMethod />} />
     </Routes>
   )
 }

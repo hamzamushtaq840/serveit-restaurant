@@ -52,21 +52,21 @@ const MenuItemDetail = () => {
             </div>
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <input type="radio" name="" id="" />
+                <input className="h-5 w-5" type="radio" name="a" id="" />
                 <span className="rubik">Small</span>
               </div>
               <span>${location.state.price}</span>
             </div>
             <div className="mt-2 flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <input type="radio" name="" id="" />
+                <input className="h-5 w-5" type="radio" name="a" id="" />
                 <span className="rubik">Medium</span>
               </div>
               <span>${location.state.price}</span>
             </div>
             <div className="mt-2 flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <input type="radio" name="" id="" />
+                <input className="h-5 w-5" type="radio" name="a" id="" />
                 <span className="rubik">Large</span>
               </div>
               <span>${location.state.price}</span>
@@ -83,21 +83,21 @@ const MenuItemDetail = () => {
             </div>
             <div className="flex items-center justify-between px-2">
               <div className="flex items-center gap-2">
-                <input type="checkbox" name="" id="" />
+                <input className="h-5 w-5" type="checkbox" name="" id="" />
                 <span className="rubik">Cheese</span>
               </div>
               <span>${location.state.price}</span>
             </div>
             <div className="mt-[6px] flex items-center justify-between px-2">
               <div className="flex items-center gap-2">
-                <input type="checkbox" name="" id="" />
+                <input className="h-5 w-5" type="checkbox" name="" id="" />
                 <span className="rubik">Hot Sauce</span>
               </div>
               <span>${location.state.price}</span>
             </div>
             <div className="mt-[6px] flex items-center justify-between px-2">
               <div className="flex items-center gap-2">
-                <input type="checkbox" name="" id="" />
+                <input className="h-5 w-5" type="checkbox" name="" id="" />
                 <span className="rubik">Cola - 500ml</span>
               </div>
               <span className="rubik">${location.state.price}</span>
