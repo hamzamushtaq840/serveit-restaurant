@@ -4,6 +4,7 @@ import Login from "./pages/Login"
 import Signup from "./pages/Signup"
 import Dashboard from "./pages/Dashboard"
 import MenuItemDetail from "./components/dashboard/MenuItemDetail"
+import Cart from "./components/cart/Cart"
 
 function App() {
   useEffect(() => {
@@ -30,6 +31,7 @@ function App() {
       <Route path="/signup" element={<Signup />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/item-detail" element={<MenuItemDetail />} />
+      <Route path="/cart" element={<Cart />} />
     </Routes>
   )
 }
