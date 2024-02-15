@@ -9,13 +9,13 @@ const Signup = () => {
   const navigate = useNavigate()
 
   return (
-    <div className="bg-primaryBg flex h-[100vh] ">
+    <div className="flex h-[100vh] bg-primaryBg ">
       {/* left-section */}
       <div className="flex h-full w-[40%] items-center justify-center p-6">
         {/* card */}
-        <div className="shadow-login z-20 flex h-full max-h-[802px] w-[90%] min-w-[401px] flex-col items-center rounded-2xl bg-white">
+        <div className="z-20 flex h-full max-h-[802px] w-[90%] min-w-[401px] flex-col items-center rounded-2xl bg-white shadow-login">
           <img src={logo} className="mb-8 mt-[7%]" alt="" />
-          <p className="rubik mb-4 text-4xl font-bold leading-9">Register</p>
+          <p className=" mb-4 text-4xl font-bold leading-9">Register</p>
           <span className="mb-4 text-base font-medium">
             Please enter your details
           </span>
@@ -55,7 +55,7 @@ const Signup = () => {
               toast.success("Check your email to verify")
               navigate("/")
             }}
-            className="bg-primary mb-4 mt-10 h-12 w-[70%] rounded-3xl font-medium text-white">
+            className="mb-4 mt-10 h-12 w-[70%] rounded-3xl bg-primary font-medium text-white">
             Signup
           </button>
           <span className="flex flex-1 items-center pb-2">

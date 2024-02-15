@@ -15,9 +15,7 @@ const Login = () => {
         {/* card */}
         <div className="z-20 flex h-full max-h-[802px] w-[90%] min-w-[401px] flex-col items-center rounded-2xl bg-white shadow-login">
           <img src={logo} className="mb-8 mt-[7%]" alt="" />
-          <p className="rubik mb-4 text-4xl font-bold leading-9">
-            Welcome back!
-          </p>
+          <p className=" mb-4 text-4xl font-bold leading-9">Welcome back!</p>
           <span className="mb-12 text-base font-medium">
             Please enter your details
           </span>

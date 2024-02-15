@@ -14,12 +14,12 @@ const Login = () => {
   return (
     <div className="flex min-h-dvh flex-col items-center">
       <img src={logo} className="mt-2 w-[103px]" alt="" />
-      <h1 className="rubik mb-4 mt-4 text-3xl font-bold leading-9">Login</h1>
+      <h1 className=" mb-4 mt-4 text-3xl font-bold leading-9">Login</h1>
       <p className="text-base font-medium">
         Enter your email and password to login
       </p>
 
-      <div className="xsm:w-full xsm:px-4 mt-8 flex w-[60%] flex-col">
+      <div className="mt-8 flex w-[60%] flex-col xsm:w-full xsm:px-4">
         <Input
           label={"Email Address"}
           name={"email"}
@@ -41,7 +41,7 @@ const Login = () => {
 
           <div
             onClick={() => navigate("/forgot-password")}
-            className="text-grey cursor-pointer text-sm hover:text-black">
+            className="cursor-pointer text-sm text-grey hover:text-black">
             Forgot password?
           </div>
         </div>
@@ -50,7 +50,7 @@ const Login = () => {
             toast.success("Login Successfull")
             navigate("/dashboard")
           }}
-          className="bg-primary mb-4 mt-10 h-12 rounded-lg font-medium text-white">
+          className="mb-4 mt-10 h-12 rounded-lg bg-primary font-medium text-white">
           Login
         </button>
         <div className="mt-4 flex items-center gap-1">
@@ -60,7 +60,7 @@ const Login = () => {
         </div>
 
         <div className="mt-4 flex gap-2">
-          <button className="bg-greyBg mb-4 flex h-12 w-1/2 items-center justify-center gap-2 rounded-lg font-medium text-black">
+          <button className="mb-4 flex h-12 w-1/2 items-center justify-center gap-2 rounded-lg bg-greyBg font-medium text-black">
             <FcGoogle className="h-[26px] w-[26px]" />
             Google
           </button>
@@ -69,7 +69,7 @@ const Login = () => {
               toast.success("Guest Mode")
               navigate("/dashboard")
             }}
-            className="bg-greyBg mb-4 flex h-12 w-1/2 items-center justify-center gap-2 rounded-lg font-medium text-black">
+            className="mb-4 flex h-12 w-1/2 items-center justify-center gap-2 rounded-lg bg-greyBg font-medium text-black">
             <FaRegCircleUser className="h-[21px] w-[21px]" />
             Guest
           </button>
@@ -78,7 +78,7 @@ const Login = () => {
         <span className="flex justify-center">
           <span className="text-grey">Don’t have an account? &nbsp;</span>{" "}
           <span
-            className="text-primary cursor-pointer font-bold hover:underline"
+            className="cursor-pointer font-bold text-primary hover:underline"
             onClick={() => navigate("/signup")}>
             Sign Up
           </span>

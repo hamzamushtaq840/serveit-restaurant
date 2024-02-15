@@ -13,11 +13,11 @@ const MenuItem = ({ item, index }) => {
       className="cursor-pointer overflow-hidden rounded-xl bg-greyBg hover:bg-primaryBg">
       <img src={item.image} className="flex w-full justify-center" alt="" />
       <div className="px-5 py-3">
-        <p>{item.name}</p>
-        <p className="text-xs text-[#9C9C9C]">{item.desc}</p>
+        <p className="rubik font-semibold">{item.name}</p>
+        <p className="rubik text-xs text-[#9C9C9C]">{item.desc}</p>
         <p className="mt-1 text-sm">{item.category}</p>
         <div className="mt-2 flex items-center justify-between">
-          <p className="text-lg font-bold text-primary">${item.price}</p>
+          <p className="text-lg font-semibold text-primary">${item.price}</p>
 
           {!addedToCart[index] && (
             <div className="flex h-[32px] items-center">

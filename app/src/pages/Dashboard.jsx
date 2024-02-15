@@ -9,10 +9,11 @@ const Dashboard = () => {
   const [selected, setSelected] = useState("All")
 
   return (
-    <div className="flex flex-col py-4">
+    <div className="mt-6 flex flex-col py-4">
       <Navbar />
       <SearchMenuItem />
       <Categories selected={selected} setSelected={setSelected} />
+      <h1 className="rubik mt-4 pl-4 text-base font-semibold">Menu Items</h1>
       <Menu />
     </div>
   )

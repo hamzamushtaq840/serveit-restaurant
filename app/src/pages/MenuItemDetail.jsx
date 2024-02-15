@@ -43,31 +43,31 @@ const MenuItemDetail = () => {
           <section className="mt-8 rounded px-3 py-5 shadow-itemOptions">
             <div className="mb-4 flex items-start justify-between">
               <div className="flex flex-col">
-                <span className="font-semibold">Choose Size</span>
-                <span className="text-xs text-primary">Select one</span>
+                <span className="rubik text-lg font-semibold">Choose Size</span>
+                <span className="rubik text-xs text-primary">Select one</span>
               </div>
-              <span className="rounded-full bg-primary px-3 py-1 text-sm text-white">
+              <span className="rubik rounded-full bg-primary px-3 py-1 text-sm text-white">
                 Required
               </span>
             </div>
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <input type="radio" name="" id="" />
-                <span>Small</span>
+                <span className="rubik">Small</span>
               </div>
               <span>${location.state.price}</span>
             </div>
             <div className="mt-2 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <input type="radio" name="" id="" />
-                <span>Medium</span>
+                <span className="rubik">Medium</span>
               </div>
               <span>${location.state.price}</span>
             </div>
             <div className="mt-2 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <input type="radio" name="" id="" />
-                <span>Large</span>
+                <span className="rubik">Large</span>
               </div>
               <span>${location.state.price}</span>
             </div>
@@ -76,31 +76,31 @@ const MenuItemDetail = () => {
           {/* add-ons */}
           <section className="flex flex-col">
             <div className="mb-3 mt-4 flex items-center justify-between">
-              <span className="font-semibold">Addon</span>
-              <span className="rounded-full bg-greyBg px-3 py-1 text-sm text-grey">
+              <span className="rubik text-lg font-semibold">Addon</span>
+              <span className="rubik rounded-full bg-greyBg px-3 py-1 text-sm text-grey">
                 Optional
               </span>
             </div>
             <div className="flex items-center justify-between px-2">
               <div className="flex items-center gap-2">
                 <input type="checkbox" name="" id="" />
-                <span>Cheese</span>
+                <span className="rubik">Cheese</span>
               </div>
               <span>${location.state.price}</span>
             </div>
             <div className="mt-[6px] flex items-center justify-between px-2">
               <div className="flex items-center gap-2">
                 <input type="checkbox" name="" id="" />
-                <span>Hot Sauce</span>
+                <span className="rubik">Hot Sauce</span>
               </div>
               <span>${location.state.price}</span>
             </div>
             <div className="mt-[6px] flex items-center justify-between px-2">
               <div className="flex items-center gap-2">
                 <input type="checkbox" name="" id="" />
-                <span>Cola - 500ml</span>
+                <span className="rubik">Cola - 500ml</span>
               </div>
-              <span>${location.state.price}</span>
+              <span className="rubik">${location.state.price}</span>
             </div>
           </section>
         </main>
@@ -122,7 +122,7 @@ const MenuItemDetail = () => {
         )}
         <button
           disabled={addedToCart}
-          className="rounded-lg bg-primary px-12 py-3 text-white disabled:bg-greyBg disabled:text-ring">
+          className="rubik rounded-lg bg-primary px-12 py-3 font-semibold text-white disabled:bg-greyBg disabled:text-ring">
           {addedToCart ? "Added" : "Add to Cart"}
         </button>
       </div>

@@ -14,7 +14,7 @@ const TopBar = ({ content }) => {
         />
       </div>
       <div className="flex-1 text-center">
-        <p className="rubik text-lg font-bold">{content}</p>
+        <p className=" text-lg font-bold">{content}</p>
       </div>
       <div className="w-[60px]"></div>
     </div>

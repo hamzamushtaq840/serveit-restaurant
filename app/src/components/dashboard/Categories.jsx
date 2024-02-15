@@ -34,7 +34,7 @@ const Categories = ({ selected, setSelected }) => {
 
   return (
     <>
-      <h1 className="rubik mb-2 mt-3 pl-4 text-base font-semibold">
+      <h1 className=" rubik mb-2 mt-3 pl-4 text-base font-semibold">
         Categories
       </h1>
       <div
@@ -50,7 +50,7 @@ const Categories = ({ selected, setSelected }) => {
                   src={v.image}
                   className="h-[54px] min-h-[54px] w-[54px] min-w-[54px] rounded-full"
                 />
-                <span className="whitespace-nowrap">{v.name}</span>
+                <span className="whitespace-nowrap text-sm">{v.name}</span>
               </div>
             </div>
           )

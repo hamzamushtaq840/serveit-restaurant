@@ -1,8 +1,8 @@
+import item0 from "./../assets/dashboard/item0.png"
 import item1 from "./../assets/dashboard/item1.png"
 import item2 from "./../assets/dashboard/item2.png"
 import item3 from "./../assets/dashboard/item3.png"
 import item4 from "./../assets/dashboard/item4.png"
-import item0 from "./../assets/dashboard/item0.png"
 import menuItem1 from "./../assets/dashboard/menuItem1.jpg"
 import menuItem2 from "./../assets/dashboard/menuItem2.png"
 
@@ -87,5 +87,29 @@ export const menuItems = [
     category: "Fast Food",
     price: 35,
     image: menuItem1,
+  },
+]
+
+export const cartItems = [
+  {
+    name: "Burger ‘Wanted’",
+    price: 35,
+    quantity: 2,
+    totalCost: 70,
+    image: menuItem1,
+    required: [
+      { type: "size", name: "Medium", price: 83 },
+      { type: "size", name: "Medium", price: 83 },
+    ],
+    addons: null,
+  },
+  {
+    name: "Pizza ‘Wanted’",
+    price: 35,
+    quantity: 5,
+    totalCost: 70,
+    image: menuItem2,
+    required: {},
+    addons: null,
   },
 ]

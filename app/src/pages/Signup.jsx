@@ -16,9 +16,9 @@ const Signup = () => {
         }}
         className="mt-4 self-start px-4"
       />
-      <h1 className="rubik mb-4 mt-2 text-3xl font-bold leading-9">Signup</h1>
+      <h1 className=" mb-4 mt-2 text-3xl font-bold leading-9">Signup</h1>
       <p className="text-base font-medium">Enter your details to register</p>
-      <div className="xsm:w-full xsm:px-4 mt-4 flex w-[60%] flex-col">
+      <div className="mt-4 flex w-[60%] flex-col xsm:w-full xsm:px-4">
         <Input
           label={"Full Name"}
           name={"email"}
@@ -51,11 +51,11 @@ const Signup = () => {
             toast.success("Account Created")
             navigate("/")
           }}
-          className="bg-primary mb-4 mt-8 h-12 rounded-lg text-lg font-bold text-white">
+          className="mb-4 mt-8 h-12 rounded-lg bg-primary text-lg font-bold text-white">
           Signup
         </button>
 
-        <button className="bg-greyBg mb-4 flex h-12 items-center justify-center gap-2 rounded-lg font-medium text-black">
+        <button className="mb-4 flex h-12 items-center justify-center gap-2 rounded-lg bg-greyBg font-medium text-black">
           <FcGoogle className="h-[26px] w-[26px]" />
           Google
         </button>
@@ -63,7 +63,7 @@ const Signup = () => {
         <span className="flex justify-center">
           <span className="text-grey">Already have an account?&nbsp;</span>
           <span
-            className="text-primary cursor-pointer font-bold hover:underline"
+            className="cursor-pointer font-bold text-primary hover:underline"
             onClick={() => navigate("/")}>
             Login
           </span>

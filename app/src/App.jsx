@@ -3,8 +3,9 @@ import { Route, Routes } from "react-router-dom"
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
 import Dashboard from "./pages/Dashboard"
-import MenuItemDetail from "./components/dashboard/MenuItemDetail"
-import Cart from "./components/cart/Cart"
+import MenuItemDetail from "./pages/MenuItemDetail"
+import Cart from "./pages/Cart"
+import Rewards from "./pages/Rewards"
 
 function App() {
   useEffect(() => {
@@ -32,6 +33,7 @@ function App() {
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/item-detail" element={<MenuItemDetail />} />
       <Route path="/cart" element={<Cart />} />
+      <Route path="/rewards" element={<Rewards />} />
     </Routes>
   )
 }
