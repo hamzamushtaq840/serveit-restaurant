@@ -6,7 +6,7 @@ const PaymentMethod = () => {
   const navigate = useNavigate()
 
   return (
-    <section className="m-4 flex items-start rounded p-4 shadow-itemOptions">
+    <section className="mx-4 mb-6 flex items-start rounded p-4 shadow-itemOptions">
       <img src={wallet} className="h-6 w-6" alt="" />
       <div className="ml-3 flex flex-1 flex-col">
         <span className="font-semibold">Payment method</span>

@@ -14,10 +14,10 @@ const SelectMethod = () => {
   }
 
   return (
-    <div>
+    <div className="flex min-h-[100dvh] flex-col">
       <TopBar content={"Payment Method"} />
 
-      <div className="m-5 flex flex-col gap-4">
+      <div className="m-5 flex flex-1 flex-col gap-4">
         {/* select card */}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
@@ -52,7 +52,7 @@ const SelectMethod = () => {
         </div>
 
         {method === "card" && (
-          <div className="mt-5 flex flex-col gap-4">
+          <div className="mt-5 flex  flex-col gap-4">
             <h1 className="rubik">Available Cards</h1>
             {/* master card */}
             <div className="flex flex-col rounded-lg bg-primaryBg p-4">
@@ -83,6 +83,11 @@ const SelectMethod = () => {
             </button>
           </div>
         )}
+      </div>
+      <div className="m-4 flex h-10 items-center">
+        <button className="rubik h-[54px] w-full rounded-lg bg-primary text-lg font-bold text-white">
+          Done
+        </button>
       </div>
     </div>
   )

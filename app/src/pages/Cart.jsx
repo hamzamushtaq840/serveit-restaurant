@@ -5,6 +5,10 @@ import CustomTip from "../components/cart/CustomTip"
 import TopBar from "../components/generic/TopBar"
 import { cartItems } from "../utils/constants"
 import PaymentMethod from "../components/cart/PaymentMethod"
+import PromoCode from "../components/cart/PromoCode"
+import OrderSummary from "../components/cart/OrderSummary"
+import { CiViewList } from "react-icons/ci"
+import { GiTakeMyMoney } from "react-icons/gi"
 
 const Cart = () => {
   const [selectedDiscount, setSelectedDiscount] = useState(15)
@@ -18,6 +22,7 @@ const Cart = () => {
           <CartItem item={v} />
         ))}
       </div>
+
       <section className="flex items-center justify-between p-4">
         <span className="rubik text-sm text-primary">
           Add items with points
@@ -26,6 +31,20 @@ const Cart = () => {
           Points: <span>456</span>
         </span>
       </section>
+
+      {/* payment-method */}
+      <PaymentMethod />
+
+      {/* promo code */}
+      <PromoCode />
+
+      <div className="mx-4 mb-4 flex items-center gap-2">
+        <GiTakeMyMoney className="h-6 w-6 text-primary" />
+        <h1 className="rubik text-xl font-bold">
+          Tip{" "}
+          <span className="text-sm font-semibold text-grey">(Optional)</span>
+        </h1>
+      </div>
 
       {/* items */}
       <section className="grid grid-cols-3 gap-2 px-4">
@@ -47,8 +66,8 @@ const Cart = () => {
       {/* custom tip */}
       <CustomTip customTip={customTip} setCustomTip={setCustomTip} />
 
-      {/* payment-method */}
-      <PaymentMethod />
+      {/* order summary */}
+      <OrderSummary />
     </div>
   )
 }
