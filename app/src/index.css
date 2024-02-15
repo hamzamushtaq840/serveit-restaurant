@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  font-family: "Outfit", sans-serif !important;
+  scroll-behavior: smooth;
+}
+
+.rubik {
+  font-family: "Rubik", sans-serif !important;
+}
+
+input[type="checkbox"] {
+  accent-color: var(--theme-primary);
+}
+input[type="radio"] {
+  accent-color: var(--theme-primary);
+}
