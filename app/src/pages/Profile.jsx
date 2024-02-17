@@ -1,15 +1,17 @@
 import React from "react"
-import TopBar from "../components/generic/TopBar"
-import upload from "./../assets/profile/upload.png"
-import Input from "../components/generic/Input"
 import toast from "react-hot-toast"
+import { BiEdit } from "react-icons/bi"
+import Input from "../components/generic/Input"
+import TopBar from "../components/generic/TopBar"
 
 const Profile = () => {
   return (
     <div className="flex flex-col ">
       <TopBar content={"Profile"} />
       <div className="relative mt-20 h-32 w-32 self-center rounded-full border border-primary bg-primaryBg">
-        <img src={upload} className="absolute bottom-0 right-0 h-8 w-8" />
+        <div className="absolute bottom-0 right-0 flex h-8 w-8 items-center justify-center rounded-full bg-primary">
+          <BiEdit className="text-button" />
+        </div>
       </div>
       <div className="mt-4 flex w-[60%] flex-col xsm:w-full xsm:px-5">
         <Input
@@ -37,7 +39,7 @@ const Profile = () => {
           onClick={() => {
             toast.success("Profile updated successfully")
           }}
-          className="mb-4 mt-8 h-12 rounded-lg bg-primary text-lg font-bold text-white">
+          className="text-button mb-4 mt-8 h-12 rounded-lg bg-primary text-lg font-bold">
           Update
         </button>
       </div>

@@ -20,6 +20,7 @@ export default {
         ring: "var(--theme-ring)",
         grey: "var(--theme-grey)",
         greyBg: "var(--theme-greyBg)",
+        button: "var(--theme-button)",
       },
       boxShadow: {
         itemOptions: "rgba(0, 0, 0, 0.16) 0px 1px 4px;",

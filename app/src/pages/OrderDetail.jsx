@@ -3,6 +3,8 @@ import OrderSummary from "../components/Orders/OrderSummary"
 import deskBell from "./../assets/orders/deskBell.png"
 import TopBar from "../components/generic/TopBar"
 import { useNavigate } from "react-router-dom"
+import { LuBellDot } from "react-icons/lu"
+import { TbBellRinging } from "react-icons/tb"
 
 const OrderDetail = () => {
   const navigate = useNavigate()
@@ -22,15 +24,16 @@ const OrderDetail = () => {
           </h1>
           <h1 className="text-sm text-[#A3A3A3]">Date: 2/13/2024 - 13:33</h1>
         </div>
+
         <div className="flex flex-col">
-          <button className="flex items-center justify-center gap-1 rounded bg-primary px-2 py-2 text-white">
-            <img src={deskBell} className="h-5 w-5" alt="" />
+          <button className="text-button flex items-center justify-center gap-1 rounded bg-primary px-2 py-2">
+            <TbBellRinging className="h-5 w-5" />
             <span>Call Waiter</span>
           </button>
         </div>
       </div>
       <OrderSummary />
-      <button className="rubik mx-5 rounded-lg bg-primary py-3 text-white">
+      <button className="rubik text-button mx-5 rounded-lg bg-primary py-3">
         Cancel Order
       </button>
     </div>

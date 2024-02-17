@@ -26,7 +26,7 @@ const Input = ({
             type={type}
             disabled={disabled}
             placeholder={placeholder}
-            className={`w-full rounded-lg border-0 bg-greyBg px-2 py-3 text-gray-900 shadow-sm outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-focus sm:text-sm sm:leading-6`}
+            className={`w-full rounded-lg border-0 bg-greyBg px-2 py-3 text-gray-900 shadow-sm outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6`}
           />
         )}
         {showError && (
@@ -38,7 +38,7 @@ const Input = ({
             className={`w-full rounded-lg border-0 bg-greyBg px-2 py-3 text-gray-900 shadow-sm outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 ${
               errors[name] && touched[name]
                 ? "ring-red-500  focus:ring-red-500"
-                : "ring-ring  focus:ring-focus"
+                : "ring-ring  focus:ring-primary"
             }`}
           />
         )}

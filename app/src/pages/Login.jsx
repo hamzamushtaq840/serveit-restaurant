@@ -50,7 +50,7 @@ const Login = () => {
             toast.success("Login Successfull")
             navigate("/dashboard")
           }}
-          className="mb-4 mt-10 h-12 rounded-lg bg-primary font-medium text-white">
+          className="text-button mb-4 mt-10 h-12 rounded-lg bg-primary font-medium">
           Login
         </button>
         <div className="mt-4 flex items-center gap-1">

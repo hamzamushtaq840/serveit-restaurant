@@ -34,7 +34,7 @@ const MenuItemDetail = () => {
                 {location?.state?.desc}
               </p>
             </div>
-            <span className="text-lg font-bold text-primary">
+            <span className="text-2xl font-bold text-primary">
               ${location.state.price}
             </span>
           </section>
@@ -46,7 +46,7 @@ const MenuItemDetail = () => {
                 <span className="rubik text-lg font-semibold">Choose Size</span>
                 <span className="rubik text-xs text-primary">Select one</span>
               </div>
-              <span className="rubik rounded-full bg-primary px-3 py-1 text-sm text-white">
+              <span className="rubik text-button rounded-full bg-primary px-3 py-1 text-sm">
                 Required
               </span>
             </div>
@@ -107,7 +107,7 @@ const MenuItemDetail = () => {
       </div>
 
       {/* total */}
-      <div className="shadow-bottomBar sticky bottom-0 z-[50] flex h-[70px] w-[49.2%] items-center justify-around bg-white px-4 xsm:left-0 xsm:w-full">
+      <div className="sticky bottom-0 z-[50] flex h-[70px] w-[49.2%] items-center justify-around bg-white px-4 shadow-bottomBar xsm:left-0 xsm:w-full">
         {/* increase or decrease */}
         {addedToCart && (
           <div className="flex items-center justify-center gap-4 rounded-full bg-white px-2 py-1">
@@ -122,7 +122,7 @@ const MenuItemDetail = () => {
         )}
         <button
           disabled={addedToCart}
-          className="rubik rounded-lg bg-primary px-12 py-3 font-semibold text-white disabled:bg-greyBg disabled:text-ring">
+          className="rubik text-button rounded-lg bg-primary px-12 py-3 font-semibold disabled:bg-greyBg disabled:text-ring">
           {addedToCart ? "Added" : "Add to Cart"}
         </button>
       </div>

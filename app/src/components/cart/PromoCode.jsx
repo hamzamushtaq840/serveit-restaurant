@@ -8,7 +8,7 @@ const PromoCode = () => {
         placeholder={"Promo Code"}
         className={`placeholder:rubik h-11 w-[80%] rounded px-2 indent-4 text-gray-900  outline-none placeholder:text-gray-400 focus:ring-0  sm:text-sm sm:leading-6`}
       />
-      <button className="flex-1 rounded bg-primary text-white">Apply</button>
+      <button className="text-button flex-1 rounded bg-primary">Apply</button>
     </div>
   )
 }

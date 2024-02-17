@@ -68,6 +68,12 @@ const Cart = () => {
 
       {/* order summary */}
       <OrderSummary />
+
+      <div className="m-5 flex h-10 items-center">
+        <button className="rubik text-button h-[54px] w-full rounded-lg bg-primary text-lg font-bold">
+          Done
+        </button>
+      </div>
     </div>
   )
 }

@@ -51,7 +51,7 @@ const Signup = () => {
             toast.success("Account Created")
             navigate("/")
           }}
-          className="mb-4 mt-8 h-12 rounded-lg bg-primary text-lg font-bold text-white">
+          className="text-button mb-4 mt-8 h-12 rounded-lg bg-primary text-lg font-bold">
           Signup
         </button>
 

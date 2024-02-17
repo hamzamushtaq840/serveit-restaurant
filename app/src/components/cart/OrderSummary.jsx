@@ -32,12 +32,6 @@ const OrderSummary = () => {
           <span className="rubik font-bold">$100</span>
         </div>
       </div>
-
-      <div className="m-5 flex h-10 items-center">
-        <button className="rubik h-[54px] w-full rounded-lg bg-primary text-lg font-bold text-white">
-          Done
-        </button>
-      </div>
     </section>
   )
 }

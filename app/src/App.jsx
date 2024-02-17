@@ -14,10 +14,47 @@ import Signup from "./pages/Signup"
 import Reviews from "./pages/Reviews"
 
 function App() {
+  const themes = [
+    {
+      primaryBg: "#FDF6E4",
+      primary: "#EA6A11",
+      button: "#FFFFFF",
+    },
+    {
+      primaryBg: "#E0F0CA",
+      primary: "#73B915",
+      button: "#FFFFFF",
+    },
+    {
+      primaryBg: "#FFFADD",
+      primary: "#FFD80D",
+      button: "#000000",
+    },
+    {
+      primary: "#272D2F",
+      primaryBg: "#EAF7FB",
+      button: "#FFFFFF",
+    },
+    {
+      primary: "#D70F65",
+      primaryBg: "#FFE9F2",
+      button: "#FFFFFF",
+    },
+  ]
   useEffect(() => {
     const setThemeColors = () => {
-      document.documentElement.style.setProperty("--theme-primaryBg", "#FDF6E4")
-      document.documentElement.style.setProperty("--theme-primary", "#EA6A11")
+      document.documentElement.style.setProperty(
+        "--theme-primaryBg",
+        themes[4].primaryBg
+      )
+      document.documentElement.style.setProperty(
+        "--theme-primary",
+        themes[4].primary
+      )
+      document.documentElement.style.setProperty(
+        "--theme-button",
+        themes[4].button
+      )
       document.documentElement.style.setProperty(
         "--theme-primarySub",
         "#E99A63"
