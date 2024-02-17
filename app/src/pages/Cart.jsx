@@ -9,6 +9,7 @@ import PromoCode from "../components/cart/PromoCode"
 import OrderSummary from "../components/cart/OrderSummary"
 import { CiViewList } from "react-icons/ci"
 import { GiTakeMyMoney } from "react-icons/gi"
+import toast from "react-hot-toast"
 
 const Cart = () => {
   const [selectedDiscount, setSelectedDiscount] = useState(15)
@@ -70,7 +71,11 @@ const Cart = () => {
       <OrderSummary />
 
       <div className="m-5 flex h-10 items-center">
-        <button className="rubik text-button h-[54px] w-full rounded-lg bg-primary text-lg font-bold">
+        <button
+          onClick={() => {
+            toast.success("Order Placed Successfully")
+          }}
+          className="rubik text-button h-[54px] w-full rounded-lg bg-primary text-lg font-bold">
           Done
         </button>
       </div>

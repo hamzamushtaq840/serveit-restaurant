@@ -1,10 +1,8 @@
 import React from "react"
-import OrderSummary from "../components/Orders/OrderSummary"
-import deskBell from "./../assets/orders/deskBell.png"
-import TopBar from "../components/generic/TopBar"
-import { useNavigate } from "react-router-dom"
-import { LuBellDot } from "react-icons/lu"
 import { TbBellRinging } from "react-icons/tb"
+import { useNavigate } from "react-router-dom"
+import TopBar from "../components/generic/TopBar"
+import OrderSummary from "../components/orders/OrderSummary"
 
 const OrderDetail = () => {
   const navigate = useNavigate()

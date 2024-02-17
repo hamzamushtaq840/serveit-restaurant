@@ -5,6 +5,7 @@ import item3 from "./../assets/dashboard/item3.png"
 import item4 from "./../assets/dashboard/item4.png"
 import menuItem1 from "./../assets/dashboard/menuItem1.jpg"
 import menuItem2 from "./../assets/dashboard/menuItem2.png"
+import user from "./../assets/user.jpg"
 
 export const categories = [
   {
@@ -149,5 +150,48 @@ export const orders = [
     date: "2/13/2024 - 13:33",
     cost: 35,
     status: "Completed",
+  },
+]
+
+export const reviews = [
+  {
+    name: "Melat Semani",
+    time: "3 hrs ago",
+    rating: "4",
+    review:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec molestie leo non sem.",
+    image: user,
+  },
+  {
+    name: "Melat Semani",
+    time: "3 hrs ago",
+    rating: "4",
+    review:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec molestie leo non sem.",
+    image: user,
+  },
+  {
+    name: "Melat Semani",
+    time: "3 hrs ago",
+    rating: "4",
+    review:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec molestie leo non sem.",
+    image: user,
+  },
+  {
+    name: "Melat Semani",
+    time: "3 hrs ago",
+    rating: "4",
+    review:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec molestie leo non sem.",
+    image: user,
+  },
+  {
+    name: "Melat Semani",
+    time: "3 hrs ago",
+    rating: "4",
+    review:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec molestie leo non sem.",
+    image: user,
   },
 ]

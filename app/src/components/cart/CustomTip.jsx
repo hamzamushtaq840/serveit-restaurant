@@ -17,7 +17,7 @@ const CustomTip = ({ customTip, setCustomTip }) => {
           <input
             type={"number"}
             placeholder={"Enter Tip Amount"}
-            className={`placeholder:rubik h-11 w-[92%] rounded border-[0.5px] border-[#9B9B9B] bg-[#FAFBFD] px-2 indent-4 text-gray-900 shadow-sm outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-focus sm:text-sm sm:leading-6`}
+            className={`placeholder:rubik h-11 w-[92%] rounded border-[0.5px] border-[#9B9B9B] bg-[#FAFBFD] px-2 indent-4 text-gray-900 shadow-sm outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6`}
           />
           <MdDeleteOutline
             onClick={() => setCustomTip(false)}

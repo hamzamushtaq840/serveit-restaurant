@@ -1,7 +1,7 @@
 import React from "react"
 import TopBar from "../components/generic/TopBar"
 import { orders } from "../utils/constants"
-import Order from "../components/Orders/Order"
+import Order from "../components/orders/Order"
 
 const Orders = () => {
   return (

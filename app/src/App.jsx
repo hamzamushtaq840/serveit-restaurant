@@ -12,6 +12,7 @@ import Rewards from "./pages/Rewards"
 import SelectMethod from "./pages/SelectMethod"
 import Signup from "./pages/Signup"
 import Reviews from "./pages/Reviews"
+import AddReview from "./pages/AddReview"
 
 function App() {
   const themes = [
@@ -83,6 +84,7 @@ function App() {
       <Route path="/orders" element={<Orders />} />
       <Route path="/order-summary" element={<OrderDetail />} />
       <Route path="/reviews" element={<Reviews />} />
+      <Route path="/add-review" element={<AddReview />} />
     </Routes>
   )
 }

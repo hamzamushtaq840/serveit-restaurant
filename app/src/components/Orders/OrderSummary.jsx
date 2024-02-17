@@ -53,7 +53,11 @@ const OrderSummary = () => {
         </div>
         <div className="mt-2 h-[1px] w-full bg-[#9B9B9B]"></div>
         <div className="mt-3 flex w-full items-center justify-between">
-          <span className="rubik">Total</span>
+          <span className="rubik font-bold">Total</span>
+          <span className="rubik font-bold">$100</span>
+        </div>
+        <div className="mt-2 flex w-full items-center justify-between">
+          <span className="rubik font-bold">Total</span>
           <span className="rubik font-bold">$100</span>
         </div>
       </div>
