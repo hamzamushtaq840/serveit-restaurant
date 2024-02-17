@@ -1,10 +1,9 @@
 import React, { useState } from "react"
-import TopBar from "../components/generic/TopBar"
 import { FaRegMoneyBillAlt } from "react-icons/fa"
 import { ImCreditCard } from "react-icons/im"
-import visa from "./../assets/cart/visa.png"
-import masterCard from "./../assets/cart/masterCard.png"
+import TopBar from "../components/generic/TopBar"
 import master from "./../assets/cart/master.png"
+import visa from "./../assets/cart/visa.png"
 
 const SelectMethod = () => {
   const [method, setMethod] = useState("") // State to store the selected method
@@ -17,7 +16,7 @@ const SelectMethod = () => {
     <div className="flex min-h-[100dvh] flex-col">
       <TopBar content={"Payment Method"} />
 
-      <div className="m-5 flex flex-1 flex-col gap-4">
+      <div className="m-5 mt-20 flex flex-1 flex-col gap-4">
         {/* select card */}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
@@ -84,7 +83,7 @@ const SelectMethod = () => {
           </div>
         )}
       </div>
-      <div className="m-4 flex h-10 items-center">
+      <div className="m-5 flex h-10 items-center">
         <button className="rubik h-[54px] w-full rounded-lg bg-primary text-lg font-bold text-white">
           Done
         </button>

@@ -7,13 +7,13 @@ const CustomTip = ({ customTip, setCustomTip }) => {
       {!customTip && (
         <div
           onClick={() => setCustomTip(!customTip)}
-          className={`text-bold rubik m-4 flex h-11 items-center justify-center rounded border-[0.5px] border-[#9B9B9B] bg-[#FAFBFD]`}>
+          className={`text-bold rubik m-5 flex h-11 items-center justify-center rounded border-[0.5px] border-[#9B9B9B] bg-[#FAFBFD]`}>
           Add Custom Tip
         </div>
       )}
 
       {customTip && (
-        <div className="relative m-4 flex items-center justify-between">
+        <div className="relative m-5 flex items-center justify-between">
           <input
             type={"number"}
             placeholder={"Enter Tip Amount"}

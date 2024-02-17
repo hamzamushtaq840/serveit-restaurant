@@ -12,7 +12,7 @@ const MenuItem = ({ item, index }) => {
       onClick={() => navigate("/item-detail", { state: item })}
       className="cursor-pointer overflow-hidden rounded-xl bg-greyBg hover:bg-primaryBg">
       <img src={item.image} className="flex w-full justify-center" alt="" />
-      <div className="px-5 py-3">
+      <div className="px-3 py-3">
         <p className="rubik font-semibold">{item.name}</p>
         <p className="rubik text-xs text-[#9C9C9C]">{item.desc}</p>
         <p className="mt-1 text-sm">{item.category}</p>

@@ -1,12 +1,17 @@
 import { useEffect } from "react"
 import { Route, Routes } from "react-router-dom"
-import Login from "./pages/Login"
-import Signup from "./pages/Signup"
-import Dashboard from "./pages/Dashboard"
-import MenuItemDetail from "./pages/MenuItemDetail"
+import OrderDetail from "./pages/OrderDetail"
 import Cart from "./pages/Cart"
+import Dashboard from "./pages/Dashboard"
+import Login from "./pages/Login"
+import MenuItemDetail from "./pages/MenuItemDetail"
+import Orders from "./pages/Orders"
+import Payments from "./pages/Payments"
+import Profile from "./pages/Profile"
 import Rewards from "./pages/Rewards"
 import SelectMethod from "./pages/SelectMethod"
+import Signup from "./pages/Signup"
+import Reviews from "./pages/Reviews"
 
 function App() {
   useEffect(() => {
@@ -36,6 +41,11 @@ function App() {
       <Route path="/cart" element={<Cart />} />
       <Route path="/rewards" element={<Rewards />} />
       <Route path="/select-method" element={<SelectMethod />} />
+      <Route path="/payments" element={<Payments />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/orders" element={<Orders />} />
+      <Route path="/order-summary" element={<OrderDetail />} />
+      <Route path="/reviews" element={<Reviews />} />
     </Routes>
   )
 }

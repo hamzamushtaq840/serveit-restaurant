@@ -42,17 +42,41 @@ const Navbar = () => {
           </button>
         </div>
         <div className="mt-8 flex flex-col gap-3 px-4">
-          <p className="text-xl font-bold text-primary">My Orders</p>
+          <p
+            className="text-xl font-bold text-primary"
+            onClick={() => navigate("/orders")}>
+            My Orders
+          </p>
           <p
             className="text-xl font-bold text-primary"
             onClick={() => navigate("/rewards")}>
             Rewards
           </p>
-          <p className="text-xl font-bold text-primary">Payments</p>
-          <p className="text-xl font-bold text-primary">Reviews</p>
+          <p
+            className="text-xl font-bold text-primary"
+            onClick={() => navigate("/payments")}>
+            Payments
+          </p>
+          <p
+            className="text-xl font-bold text-primary"
+            onClick={() => {
+              navigate("/reviews")
+            }}>
+            Reviews
+          </p>
           <p className="text-xl font-bold text-primary">Help</p>
-          <p className="text-xl font-bold text-primary">Profile</p>
-          <p className="text-xl font-bold text-primary">Logout</p>
+          <p
+            className="text-xl font-bold text-primary"
+            onClick={() => {
+              navigate("/profile")
+            }}>
+            Profile
+          </p>
+          <p
+            className="text-xl font-bold text-primary"
+            onClick={() => navigate("/")}>
+            Logout
+          </p>
         </div>
       </aside>
     </nav>

@@ -38,7 +38,7 @@ const Cart = () => {
       {/* promo code */}
       <PromoCode />
 
-      <div className="mx-4 mb-4 flex items-center gap-2">
+      <div className="mx-5 mb-4 flex items-center gap-2">
         <GiTakeMyMoney className="h-6 w-6 text-primary" />
         <h1 className="rubik text-xl font-bold">
           Tip{" "}

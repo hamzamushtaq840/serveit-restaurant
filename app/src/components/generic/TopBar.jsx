@@ -7,7 +7,7 @@ const TopBar = ({ content }) => {
 
   return (
     <div className="shadow-topBar fixed top-0 z-[80] flex w-full items-center justify-between bg-white px-4 pb-4 pt-3">
-      <div className="w-[60px]">
+      <div className="w-[60px] cursor-pointer">
         <IoChevronBackCircleOutline
           className="h-6 w-6"
           onClick={() => navigate(-1)}

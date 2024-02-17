@@ -11,6 +11,31 @@ const OrderSummary = () => {
 
       <div className="mx-5 mb-8 mt-1 flex flex-col items-start gap-2 rounded p-4 shadow-itemOptions">
         <div className="flex w-full items-center justify-between">
+          <span className="rubik">Burger ‘Wanted’</span>
+          <span className="rubik font-bold">$17</span>
+        </div>{" "}
+        <div className="flex w-full items-center justify-between">
+          <span className="rubik">Burger</span>
+          <span className="rubik font-bold">$167</span>
+        </div>{" "}
+        <div className="flex w-full items-center justify-between">
+          <span className="rubik">Pizza (Medium)</span>
+          <span className="rubik font-bold">$167</span>
+        </div>{" "}
+        <div className="flex w-full items-center justify-between">
+          <span className="rubik">Soft Drink</span>
+          <span className="rubik font-bold">$167</span>
+        </div>{" "}
+        <div className="flex w-full items-center justify-between">
+          <span className="rubik">Cake</span>
+          <span className="rubik font-bold">$167</span>
+        </div>{" "}
+        <div className="flex w-full items-center justify-between">
+          <span className="rubik">Chicken</span>
+          <span className="rubik font-bold">$167</span>
+        </div>
+        <div className="my-2 h-[1px] w-full bg-[#9B9B9B]"></div>
+        <div className="flex w-full items-center justify-between">
           <span className="rubik">Subtotal</span>
           <span className="rubik font-bold">$167</span>
         </div>
@@ -31,12 +56,6 @@ const OrderSummary = () => {
           <span className="rubik">Total</span>
           <span className="rubik font-bold">$100</span>
         </div>
-      </div>
-
-      <div className="m-5 flex h-10 items-center">
-        <button className="rubik h-[54px] w-full rounded-lg bg-primary text-lg font-bold text-white">
-          Done
-        </button>
       </div>
     </section>
   )

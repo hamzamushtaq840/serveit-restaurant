@@ -2,7 +2,7 @@ import React from "react"
 
 const PromoCode = () => {
   return (
-    <div className="m-4 flex justify-between gap-2 rounded border border-black py-1 pr-2">
+    <div className="m-5 flex justify-between gap-2 rounded border border-black py-1 pr-2">
       <input
         type={"number"}
         placeholder={"Promo Code"}

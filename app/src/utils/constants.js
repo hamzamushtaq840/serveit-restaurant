@@ -113,3 +113,41 @@ export const cartItems = [
     addons: null,
   },
 ]
+
+export const orders = [
+  {
+    name: "Alpha Restaurent",
+    orderId: "AAJ42",
+    date: "2/13/2024 - 13:33",
+    cost: 35,
+    status: "Open",
+  },
+  {
+    name: "Alpha Restaurent",
+    orderId: "AAJ42",
+    date: "2/13/2024 - 13:33",
+    cost: 35,
+    status: "Accepted",
+  },
+  {
+    name: "Alpha Restaurent",
+    orderId: "AAJ42",
+    date: "2/13/2024 - 13:33",
+    cost: 35,
+    status: "Ready",
+  },
+  {
+    name: "Alpha Restaurent",
+    orderId: "AAJ42",
+    date: "2/13/2024 - 13:33",
+    cost: 35,
+    status: "Canceled",
+  },
+  {
+    name: "Alpha Restaurent",
+    orderId: "AAJ42",
+    date: "2/13/2024 - 13:33",
+    cost: 35,
+    status: "Completed",
+  },
+]
