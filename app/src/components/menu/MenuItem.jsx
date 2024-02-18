@@ -11,8 +11,12 @@ const MenuItem = ({ item, index }) => {
     <div
       onClick={() => navigate("/item-detail", { state: item })}
       className="cursor-pointer overflow-hidden rounded-xl bg-greyBg hover:bg-primaryBg">
-      <img src={item.image} className="flex w-full justify-center" alt="" />
-      <div className="px-3 py-3">
+      <img
+        src={item.image}
+        className="flex h-[140px] w-full justify-center object-cover"
+        alt=""
+      />
+      <div className="px-3 pt-3 pb-3">
         <p className="rubik font-semibold">{item.name}</p>
         <p className="rubik text-xs text-[#9C9C9C]">{item.desc}</p>
         <p className="mt-1 text-sm">{item.category}</p>
@@ -20,21 +24,21 @@ const MenuItem = ({ item, index }) => {
           <p className="text-lg font-semibold text-primary">${item.price}</p>
 
           {!addedToCart[index] && (
-            <div className="flex h-[32px] items-center">
-              <button className="flex h-[25px] w-[25px] items-center justify-center rounded-full bg-white">
-                <FaPlus className="h-3 w-3 text-primary" />
+            <div onClick={(e) => { e.stopPropagation() }} className="flex h-6 items-center">
+              <button className="flex h-6 w-6 items-center justify-center rounded-full bg-white">
+                <FaPlus className="h-4 w-4 text-primary hover:text-grey" />
               </button>
             </div>
           )}
 
           {addedToCart[index] && (
-            <div className="flex items-center justify-center gap-2 rounded-full bg-white px-2 py-1">
+            <div onClick={(e) => { e.stopPropagation() }} className="flex items-center justify-center gap-3 rounded-full bg-white px-3 py-1">
               <button>
-                <FaMinus className="h-3 w-3 text-primary" />
+                <FaMinus className="h-4 w-4 text-primary hover:text-grey" />
               </button>
               <span>4</span>
               <button>
-                <FaPlus className="h-3 w-3 text-primary" />
+                <FaPlus className="h-4 w-4 text-primary hover:text-grey" />
               </button>
             </div>
           )}

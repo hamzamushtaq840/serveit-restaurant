@@ -1,13 +1,13 @@
 import React from "react"
-import Menu from "../components/dashboard/Menu"
-import Navbar from "../components/generic/Navbar"
+import Menu from "../components/menu/Menu"
+import TopBar from "../components/generic/TopBar"
 
 const Rewards = () => {
   return (
     <div>
-      <Navbar />
-      <div className="mb-8 mt-16 flex items-center justify-center">
-        <span className=" text-2xl font-semibold text-grey">
+      <TopBar content={"Rewards"} />
+      <div className="mb-8 mt-20 flex items-center justify-center">
+        <span className="text-2xl font-semibold text-grey">
           Points : <span className="text-4xl text-primary">456</span>
         </span>
       </div>

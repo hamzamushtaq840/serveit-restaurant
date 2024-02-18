@@ -57,8 +57,9 @@ const OrderSummary = () => {
           <span className="rubik font-bold">$100</span>
         </div>
         <div className="mt-2 flex w-full items-center justify-between">
-          <span className="rubik font-bold">Total</span>
-          <span className="rubik font-bold">$100</span>
+          <span className="rubik font-bold">Paid With</span>
+          <span className="rubik ">Cash</span>
+          <span className="rubik text-[#edbb32]">Pending</span>
         </div>
       </div>
     </section>

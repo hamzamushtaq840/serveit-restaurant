@@ -24,3 +24,24 @@ input[type="checkbox"] {
 input[type="radio"] {
   accent-color: var(--theme-primary);
 }
+
+.container1 {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.container1::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+@media screen and (max-width: 576px) {
+  .slick-track {
+    display: flex !important;
+  }
+
+  .slick-slide {
+    height: inherit !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+}

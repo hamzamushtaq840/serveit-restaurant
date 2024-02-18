@@ -16,7 +16,7 @@ const MenuItemDetail = () => {
         <div
           onClick={() => navigate(-1)}
           className="fixed left-3 top-5 flex h-7 w-7 items-center justify-center rounded-full bg-white">
-          <IoChevronBackOutline />
+          <IoChevronBackOutline className="w-6 h-6 hover:text-grey" />
         </div>
 
         <img

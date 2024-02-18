@@ -46,15 +46,15 @@ function App() {
     const setThemeColors = () => {
       document.documentElement.style.setProperty(
         "--theme-primaryBg",
-        themes[4].primaryBg
+        themes[0].primaryBg
       )
       document.documentElement.style.setProperty(
         "--theme-primary",
-        themes[4].primary
+        themes[0].primary
       )
       document.documentElement.style.setProperty(
         "--theme-button",
-        themes[4].button
+        themes[0].button
       )
       document.documentElement.style.setProperty(
         "--theme-primarySub",

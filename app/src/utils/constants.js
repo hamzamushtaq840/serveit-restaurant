@@ -3,8 +3,8 @@ import item1 from "./../assets/dashboard/item1.png"
 import item2 from "./../assets/dashboard/item2.png"
 import item3 from "./../assets/dashboard/item3.png"
 import item4 from "./../assets/dashboard/item4.png"
-import menuItem1 from "./../assets/dashboard/menuItem1.jpg"
-import menuItem2 from "./../assets/dashboard/menuItem2.png"
+import menuItem1 from "./../assets/dashboard/menuItem1.png"
+import menuItem2 from "./../assets/dashboard/menuItem2.jpg"
 import user from "./../assets/user.jpg"
 
 export const categories = [

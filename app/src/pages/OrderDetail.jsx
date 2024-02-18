@@ -31,7 +31,7 @@ const OrderDetail = () => {
         </div>
       </div>
       <OrderSummary />
-      <button className="rubik text-button mx-5 rounded-lg bg-primary py-3">
+      <button className="rubik text-button mx-5 rounded-lg bg-primary py-3 mb-4">
         Cancel Order
       </button>
     </div>
