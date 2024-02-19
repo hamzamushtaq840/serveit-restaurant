@@ -20,14 +20,11 @@ const Navbar = () => {
   useEffect(() => {
     function handleClickOutside(event) {
       if (sideNavRef.current && !sideNavRef.current.contains(event.target)) {
-        // Clicked outside the side navigation bar, close it
-        // Implement your close side navigation bar logic here
         setShowMenu(false);
       }
     }
 
     function handleScroll() {
-      // Close the side navigation bar when scrolling occurs
       setShowMenu(false);
     }
 

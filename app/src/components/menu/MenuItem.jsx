@@ -10,7 +10,7 @@ const MenuItem = ({ item, index }) => {
   return (
     <div
       onClick={() => navigate("/item-detail", { state: item })}
-      className="cursor-pointer overflow-hidden rounded-xl bg-greyBg hover:bg-primaryBg">
+      className="cursor-pointer overflow-hidden rounded-xl bg-greyBg hover:bg-[#ccccccc8]">
       <img
         src={item.image}
         className="flex h-[140px] w-full justify-center object-cover"

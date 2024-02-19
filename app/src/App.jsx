@@ -13,6 +13,7 @@ import SelectMethod from "./pages/SelectMethod"
 import Signup from "./pages/Signup"
 import Reviews from "./pages/Reviews"
 import AddReview from "./pages/AddReview"
+import AddCard from "./pages/AddCard"
 
 function App() {
   const themes = [
@@ -46,15 +47,15 @@ function App() {
     const setThemeColors = () => {
       document.documentElement.style.setProperty(
         "--theme-primaryBg",
-        themes[0].primaryBg
+        themes[4].primaryBg
       )
       document.documentElement.style.setProperty(
         "--theme-primary",
-        themes[0].primary
+        themes[4].primary
       )
       document.documentElement.style.setProperty(
         "--theme-button",
-        themes[0].button
+        themes[4].button
       )
       document.documentElement.style.setProperty(
         "--theme-primarySub",
@@ -85,6 +86,7 @@ function App() {
       <Route path="/order-summary" element={<OrderDetail />} />
       <Route path="/reviews" element={<Reviews />} />
       <Route path="/add-review" element={<AddReview />} />
+      <Route path="/add-card" element={<AddCard />} />
     </Routes>
   )
 }

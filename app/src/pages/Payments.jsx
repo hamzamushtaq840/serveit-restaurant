@@ -6,9 +6,11 @@ import visa from "./../assets/cart/visa.png"
 import DeleteModal from "../components/generic/DeleteModal"
 import { MdOutlineDelete } from "react-icons/md"
 import toast from "react-hot-toast"
+import { useNavigate } from "react-router-dom"
 
 const Payments = () => {
   const [deleteModal, setDeleteModal] = useState(false)
+  const navigate = useNavigate()
 
   return (
     <div>
@@ -52,7 +54,7 @@ const Payments = () => {
           />
         </div>
 
-        <button className="mt-3 rounded-xl border border-primary py-3 text-lg text-primary">
+        <button onClick={() => navigate("/add-card")} className="mt-3 rounded-xl border border-primary py-3 text-lg text-primary">
           Add new card
         </button>
       </div>

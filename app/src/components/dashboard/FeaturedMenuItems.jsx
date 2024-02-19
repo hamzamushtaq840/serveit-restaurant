@@ -32,7 +32,7 @@ const FeaturedMenuItems = () => {
   const settings = {
     infinite: true,
     speed: 300,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 3000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,

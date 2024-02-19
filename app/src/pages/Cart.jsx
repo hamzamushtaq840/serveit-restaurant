@@ -1,19 +1,19 @@
 import React, { useState } from "react"
+import { GiTakeMyMoney } from "react-icons/gi"
 import { RxCross2 } from "react-icons/rx"
+import { useNavigate } from "react-router-dom"
 import CartItem from "../components/cart/CartItem"
 import CustomTip from "../components/cart/CustomTip"
-import TopBar from "../components/generic/TopBar"
-import { cartItems } from "../utils/constants"
+import OrderSummary from "../components/cart/OrderSummary"
 import PaymentMethod from "../components/cart/PaymentMethod"
 import PromoCode from "../components/cart/PromoCode"
-import OrderSummary from "../components/cart/OrderSummary"
-import { CiViewList } from "react-icons/ci"
-import { GiTakeMyMoney } from "react-icons/gi"
-import toast from "react-hot-toast"
+import TopBar from "../components/generic/TopBar"
+import { cartItems } from "../utils/constants"
 
 const Cart = () => {
-  const [selectedDiscount, setSelectedDiscount] = useState(15)
+  const [selectedDiscount, setSelectedDiscount] = useState(0)
   const [customTip, setCustomTip] = useState(false)
+  const navigate = useNavigate()
 
   return (
     <div className="pt-4 xsm:pt-0">
@@ -54,18 +54,20 @@ const Cart = () => {
             onClick={() => {
               setSelectedDiscount(v)
             }}
-            className={`relative flex h-16 flex-col items-center justify-center rounded border-[0.5px] ${selectedDiscount === v ? "border-primary bg-primaryBg" : "border-[#9B9B9B] bg-[#FAFBFD]"} font-semibold`}>
+            className={`relative flex h-20 flex-col items-center justify-center rounded border-[0.5px] ${selectedDiscount === v ? "border-primary bg-primaryBg" : "border-[#9B9B9B] bg-[#FAFBFD]"} font-semibold`}>
             <span className="text-primary">{v}%</span>
             <span className="text-xs font-normal text-grey">$3.34</span>
             {selectedDiscount === v && (
-              <RxCross2 className="absolute right-1 top-1 h-4 w-4 text-red-500" />
+              <div className="bg-red-200 px-[1px] py-[1px] rounded absolute right-1 top-1 ">
+                <RxCross2 onClick={(e) => { e.stopPropagation(); setSelectedDiscount(0) }} className="h-4 w-4 text-red-500" />
+              </div>
             )}
           </div>
         ))}
       </section>
 
       {/* custom tip */}
-      <CustomTip customTip={customTip} setCustomTip={setCustomTip} />
+      <CustomTip customTip={customTip} setSelectedDiscount={setSelectedDiscount} setCustomTip={setCustomTip} />
 
       {/* order summary */}
       <OrderSummary />
@@ -73,7 +75,7 @@ const Cart = () => {
       <div className="m-5 flex h-10 items-center">
         <button
           onClick={() => {
-            toast.success("Order Placed Successfully")
+            navigate("/add-card")
           }}
           className="rubik text-button h-[54px] w-full rounded-lg bg-primary text-lg font-bold">
           Done

@@ -1,12 +1,12 @@
 import React from "react"
 import { MdDeleteOutline } from "react-icons/md"
 
-const CustomTip = ({ customTip, setCustomTip }) => {
+const CustomTip = ({ customTip, setCustomTip, setSelectedDiscount }) => {
   return (
     <div>
       {!customTip && (
         <div
-          onClick={() => setCustomTip(!customTip)}
+          onClick={() => { setCustomTip(!customTip); setSelectedDiscount(0) }}
           className={`text-bold rubik m-5 flex h-11 items-center justify-center rounded border-[0.5px] border-[#9B9B9B] bg-[#FAFBFD]`}>
           Add Custom Tip
         </div>
@@ -21,7 +21,7 @@ const CustomTip = ({ customTip, setCustomTip }) => {
           />
           <MdDeleteOutline
             onClick={() => setCustomTip(false)}
-            className="mr- h-6 w-6 text-red-500"
+            className="h-6 w-6 text-red-500"
           />
           <div className="absolute left-2 text-grey">$</div>
         </div>
