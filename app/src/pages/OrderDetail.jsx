@@ -2,7 +2,7 @@ import React from "react"
 import { TbBellRinging } from "react-icons/tb"
 import { useNavigate } from "react-router-dom"
 import TopBar from "../components/generic/TopBar"
-import OrderSummary from "../components/orders/OrderSummary"
+import OrderTotal from "../components/orders/OrderTotal"
 
 const OrderDetail = () => {
   const navigate = useNavigate()
@@ -30,7 +30,7 @@ const OrderDetail = () => {
           </button>
         </div>
       </div>
-      <OrderSummary />
+      <OrderTotal />
       <button className="rubik text-button mx-5 rounded-lg bg-primary py-3 mb-4">
         Cancel Order
       </button>

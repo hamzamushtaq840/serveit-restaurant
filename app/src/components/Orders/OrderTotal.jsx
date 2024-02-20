@@ -1,7 +1,7 @@
 import React from "react"
 import { FaRegListAlt } from "react-icons/fa"
 
-const OrderSummary = () => {
+const OrderTotal = () => {
   return (
     <section>
       <div className="m-5 flex items-center gap-2">
@@ -66,4 +66,4 @@ const OrderSummary = () => {
   )
 }
 
-export default OrderSummary
+export default OrderTotal
