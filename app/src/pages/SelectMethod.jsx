@@ -4,9 +4,11 @@ import { ImCreditCard } from "react-icons/im"
 import TopBar from "../components/generic/TopBar"
 import master from "./../assets/cart/master.png"
 import visa from "./../assets/cart/visa.png"
+import { useNavigate } from "react-router-dom"
 
 const SelectMethod = () => {
   const [method, setMethod] = useState("") // State to store the selected method
+  const navigate = useNavigate()
 
   const handleMethodChange = selectedMethod => {
     setMethod(selectedMethod) // Update the state with the selected method
@@ -77,7 +79,7 @@ const SelectMethod = () => {
               <span>**** **** **** 1234</span>
             </div>
 
-            <button className="mt-3 rounded-xl border border-primary py-4 text-lg text-primary">
+            <button onClick={() => { navigate("/add-card") }} className="mt-3 rounded-xl border border-primary py-4 text-lg text-primary">
               Add new card
             </button>
           </div>

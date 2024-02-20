@@ -100,7 +100,7 @@ export const cartItems = [
     image: menuItem1,
     required: [
       { type: "size", name: "Medium", price: 83 },
-      { type: "size", name: "Medium", price: 83 },
+      { type: "size", name: "Brown Bread", price: 83 },
     ],
     addons: null,
   },
@@ -110,8 +110,10 @@ export const cartItems = [
     quantity: 5,
     totalCost: 70,
     image: menuItem2,
-    required: {},
-    addons: null,
+    required: [],
+    addons: [
+      { type: "size", name: "Cheese", price: 83 },
+    ],
   },
 ]
 

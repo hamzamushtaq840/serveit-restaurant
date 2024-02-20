@@ -88,19 +88,12 @@ const MenuItemDetail = () => {
               </div>
               <span>${location.state.price}</span>
             </div>
-            <div className="mt-[6px] flex items-center justify-between px-2">
+            <div className="mt-3 flex items-center justify-between px-2">
               <div className="flex items-center gap-2">
                 <input className="h-5 w-5" type="checkbox" name="" id="" />
                 <span className="rubik">Hot Sauce</span>
               </div>
               <span>${location.state.price}</span>
-            </div>
-            <div className="mt-[6px] flex items-center justify-between px-2">
-              <div className="flex items-center gap-2">
-                <input className="h-5 w-5" type="checkbox" name="" id="" />
-                <span className="rubik">Cola - 500ml</span>
-              </div>
-              <span className="rubik">${location.state.price}</span>
             </div>
           </section>
         </main>

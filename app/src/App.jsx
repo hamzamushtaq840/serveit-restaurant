@@ -14,6 +14,7 @@ import Signup from "./pages/Signup"
 import Reviews from "./pages/Reviews"
 import AddReview from "./pages/AddReview"
 import AddCard from "./pages/AddCard"
+import ScrollToTop from "./hooks/ScrollToTop"
 
 function App() {
   const themes = [
@@ -47,15 +48,15 @@ function App() {
     const setThemeColors = () => {
       document.documentElement.style.setProperty(
         "--theme-primaryBg",
-        themes[4].primaryBg
+        themes[1].primaryBg
       )
       document.documentElement.style.setProperty(
         "--theme-primary",
-        themes[4].primary
+        themes[1].primary
       )
       document.documentElement.style.setProperty(
         "--theme-button",
-        themes[4].button
+        themes[1].button
       )
       document.documentElement.style.setProperty(
         "--theme-primarySub",

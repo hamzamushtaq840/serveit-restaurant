@@ -35,6 +35,7 @@ const FeaturedMenuItems = () => {
     autoplaySpeed: 3000,
     slidesToShow: 1,
     slidesToScroll: 1,
+    arrows: false,
     autoplay: true,
     cssEase: "linear",
     pauseOnHover: false,

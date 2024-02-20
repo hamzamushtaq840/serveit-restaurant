@@ -11,7 +11,6 @@ const AddCard = () => {
   const [cardHolderName, setCardHolderName] = useState('');
   const [saveCard, setSaveCard] = useState(false);
 
-
   const formatCardNumber = (input) => {
     return input.replace(/\D/g, '').replace(/(.{4})/g, '$1 ').trim();
   };
@@ -35,8 +34,6 @@ const AddCard = () => {
       format += (tempIndex < temp.length) ? temp[tempIndex] : '*'; // Show characters from temp, mask the rest
       tempIndex++; // Move to the next character in temp
     }
-    console.log('temp', temp);
-    console.log('format', format);
     setDisplayCardNumber(format);
   };
 
@@ -85,7 +82,7 @@ const AddCard = () => {
             </div>
             <div className='flex flex-col gap-1 items-center'>
               <span className='text-xs uppercase font-bold text-[#ccc]'>cvc</span>
-              <span className='font-bold rubik tracking-widest h-6 text-white'>{cvc}</span>
+              <span className='font-bold rubik tracking-widest h-6 w-8 text-white'>{cvc}</span>
             </div>
           </div>
         </div>
@@ -162,7 +159,7 @@ const AddCard = () => {
       <div className='flex flex-1 items-end pb-4 mx-5'>
         <button
           onClick={() => {
-            toast.success("Order Placed Successfully")
+            toast.success("Success")
           }}
           className="rubik text-button h-[54px] w-full rounded-lg bg-primary text-lg font-bold">
           Done

@@ -23,6 +23,15 @@ const CartItem = ({ item }) => {
                 {item?.required?.map((v, index) => (
                   <div key={index} className="flex items-center gap-1">
                     <span className="text-xs">{v?.name}</span>
+                  </div>
+                ))}
+              </>
+            )}
+            {item?.addons?.length > 0 && (
+              <>
+                {item?.addons?.map((v, index) => (
+                  <div key={index} className="flex items-center gap-1">
+                    <span className="text-xs">{v?.name}</span>
                     <RxCross2 className="h-3 w-3 text-red-500" />
                   </div>
                 ))}
