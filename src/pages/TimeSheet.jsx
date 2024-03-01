@@ -1,7 +1,9 @@
-import React from "react"
+import React from 'react'
 
 const TimeSheet = () => {
-  return <div>TimeSheet</div>
+  return (
+    <div>TimeSheet</div>
+  )
 }
 
 export default TimeSheet

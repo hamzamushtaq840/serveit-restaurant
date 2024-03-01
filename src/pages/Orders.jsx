@@ -6,6 +6,10 @@ import { RiDeleteBin3Line } from "react-icons/ri"
 import { TbEdit } from "react-icons/tb"
 import DeleteModal from "../components/generic/DeleteModal"
 import { tableBody, tableHeader } from "../utils/consts"
+import { IoStar } from "react-icons/io5";
+import OrderSummary from "../components/orders/OrderSummary"
+import EditOrder from "../components/orders/EditOrder"
+
 
 const data = [
   {
@@ -14,7 +18,7 @@ const data = [
     location: "T25",
     status: "Open",
     amount: 1000,
-    paymentType: "Cash",
+    reviews: 3,
     paymentStatus: "Pending",
     time: "2 hours ago",
   },
@@ -24,8 +28,8 @@ const data = [
     location: "T25",
     status: "Accepted",
     amount: 2000,
-    paymentType: "Cash",
-    paymentStatus: "Pending",
+    reviews: 3,
+    paymentStatus: 'Pending',
     time: "2 hours ago",
   },
   {
@@ -34,7 +38,7 @@ const data = [
     location: "T25",
     status: "Ready",
     amount: 3000,
-    paymentType: "Cash",
+    reviews: 3,
     paymentStatus: "Paid",
     time: "2 hours ago",
   },
@@ -44,7 +48,7 @@ const data = [
     location: "T25",
     status: "Preparing",
     amount: 4000,
-    paymentType: "Cash",
+    reviews: 3,
     paymentStatus: "Pending",
     time: "2 hours ago",
   },
@@ -54,7 +58,7 @@ const data = [
     location: "T25",
     status: "Canceled",
     amount: 5000,
-    paymentType: "Cash",
+    reviews: 3,
     paymentStatus: "Pending",
     time: "2 hours ago",
   },
@@ -64,7 +68,7 @@ const data = [
     location: "T25",
     status: "Completed",
     amount: 6000,
-    paymentType: "Cash",
+    reviews: 3,
     paymentStatus: "Paid",
     time: "2 hours ago",
   },
@@ -72,6 +76,8 @@ const data = [
 
 export default function Orders() {
   const [deleteModal, setDeleteModal] = useState(false)
+  const [summaryModal, setSummaryModal] = useState(false)
+  const [editModal, setEditModal] = useState(false)
 
   const columns = useMemo(() => [
     {
@@ -98,25 +104,20 @@ export default function Orders() {
       accessorFn: row => (
         <div
           className={`${row.status === "Open" && "rounded-md bg-[#E9E9E9] py-1"}
-            ${
-              row.status === "Accepted" &&
-              "rounded-md bg-[#ECFFBA] py-1 text-[#80AF00]"
+            ${row.status === "Accepted" &&
+            "rounded-md bg-[#ECFFBA] py-1 text-[#80AF00]"
             }
-            ${
-              row.status === "Ready" &&
-              "rounded-md bg-[#E1CDFF] py-1 text-[#934AFF]"
+            ${row.status === "Ready" &&
+            "rounded-md bg-[#E1CDFF] py-1 text-[#934AFF]"
             }
-            ${
-              row.status === "Preparing" &&
-              "rounded-md bg-[#FFF0C7] py-1 text-[#D3A729]"
+            ${row.status === "Preparing" &&
+            "rounded-md bg-[#FFF0C7] py-1 text-[#D3A729]"
             }
-            ${
-              row.status === "Canceled" &&
-              "rounded-md bg-[#FFE4DE] py-1 text-[#B71D18]"
+            ${row.status === "Canceled" &&
+            "rounded-md bg-[#FFE4DE] py-1 text-[#B71D18]"
             }
-            ${
-              row.status === "Completed" &&
-              "rounded-md bg-[#D6F1E8] py-1 text-[#0B7E6E]"
+            ${row.status === "Completed" &&
+            "rounded-md bg-[#D6F1E8] py-1 text-[#0B7E6E]"
             }
             `}>
           {row.status}
@@ -135,18 +136,27 @@ export default function Orders() {
     {
       accessorKey: "paymentType",
       header: "Payment Type",
-      muiTableHeadCellProps: tableHeader,
-      muiTableBodyCellProps: tableBody,
-    },
-    {
-      accessorKey: "paymentStatus",
-      header: "Payment Status",
       accessorFn: row => (
         <div
           className={`${row.paymentStatus === "Pending" && "text-[#EABB36]"}
             ${row.paymentStatus === "Paid" && "text-[#0B7E6E]"}
             `}>
           {row.paymentStatus}
+        </div>
+      ),
+      muiTableHeadCellProps: tableHeader,
+      muiTableBodyCellProps: tableBody,
+    },
+    {
+      accessorKey: "reviews",
+      header: "Reviews",
+      accessorFn: row => (
+        <div className="text-yellow-500 flex gap-2 justify-center">
+          <IoStar />
+          <IoStar />
+          <IoStar />
+          <IoStar />
+          <IoStar />
         </div>
       ),
       muiTableHeadCellProps: tableHeader,
@@ -161,8 +171,8 @@ export default function Orders() {
     {
       accessorFn: (row, index) => (
         <div className="flex items-center justify-center ">
-          <LiaClipboardListSolid className="h-[28px] w-[28px] cursor-pointer rounded-full p-1 text-[#D3A729] hover:bg-[#FFF0C7]" />
-          <TbEdit className="h-[28px] w-[28px] cursor-pointer rounded-full p-1 text-blue-500 hover:bg-blue-200" />
+          <LiaClipboardListSolid onClick={() => { setSummaryModal(true) }} className="h-[28px] w-[28px] cursor-pointer rounded-full p-1 text-[#D3A729] hover:bg-[#FFF0C7]" />
+          <TbEdit onClick={() => { setEditModal(true) }} className="h-[28px] w-[28px] cursor-pointer rounded-full p-1 text-blue-500 hover:bg-blue-200" />
           <RiDeleteBin3Line
             onClick={() => {
               setDeleteModal(true)
@@ -204,6 +214,8 @@ export default function Orders() {
           toast.success("Order deleted successfully")
         }}
       />
+      {summaryModal && <OrderSummary onClose={() => { setSummaryModal(false) }} />}
+      {editModal && <EditOrder onClose={() => { setEditModal(false) }} />}
     </div>
   )
 }
