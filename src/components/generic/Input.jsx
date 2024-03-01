@@ -15,7 +15,7 @@ const Input = ({
 }) => {
   return (
     <div style={{ width: width, marginTop: mt }} className={`relative`}>
-      <label for="email" className="text-sm font-medium">
+      <label for="email" className="font-medium">
         {label}
       </label>
       <div class="mt-1">
@@ -32,11 +32,10 @@ const Input = ({
             name={name}
             type={type}
             placeholder={placeholder}
-            className={`w-full rounded-lg border-0 px-2 py-2 text-gray-900 shadow-sm outline-none ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 ${
-              errors[name] && touched[name]
+            className={`w-full rounded-lg border-0 px-2 py-2 text-gray-900 shadow-sm outline-none ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 ${errors[name] && touched[name]
                 ? "ring-red-500  focus:ring-red-500"
                 : "ring-ring  focus:ring-focus"
-            }`}
+              }`}
           />
         )}
       </div>

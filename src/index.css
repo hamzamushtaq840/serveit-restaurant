@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,7 +13,7 @@
 }
 
 .rubik {
-  font-family: "Rubik", sans-serif;
+   font-family: "Rubik", sans-serif !important; 
 }
 
 input[type="checkbox"] {
@@ -95,4 +95,10 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 
 input[type="color"]::-webkit-color-swatch {
   border: none;
+}
+
+.react-switch-handle{
+  width: 20px !important;
+  height: 20px !important;
+  top: -0px !important;
 }

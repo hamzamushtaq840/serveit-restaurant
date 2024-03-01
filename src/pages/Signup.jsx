@@ -56,7 +56,7 @@ const Signup = () => {
               navigate("/")
             }}
             className="mb-4 mt-10 h-12 w-[70%] rounded-3xl bg-primary font-medium text-white">
-            Signup
+            Register
           </button>
           <span className="flex flex-1 items-center pb-2">
             <span className="text-grey">Already have an account? &nbsp;</span>{" "}

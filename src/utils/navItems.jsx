@@ -55,11 +55,11 @@ export const navItems = [
     image: <LuClock9 className="h-[17px] w-[17px]" />,
     to: "/timesheet",
   },
-  {
-    name: "Reviews",
-    image: <Reviews />,
-    to: "/reviews",
-  },
+  // {
+  //   name: "Reviews",
+  //   image: <Reviews />,
+  //   to: "/reviews",
+  // },
   {
     name: "Rewards",
     image: <Rewards />,

@@ -1,26 +1,19 @@
-import React, { useState } from "react"
-import Dropzone from "react-dropzone"
-import { IoMdClose } from "react-icons/io"
-import Input from "../generic/Input"
-import Select from "react-select"
-import { addCategory } from "../../utils/schema"
 import { Form, Formik } from "formik"
+import React from "react"
+import { IoMdClose } from "react-icons/io"
+import Select from "react-select"
+import Input from "../generic/Input"
 
-const AddCategory = ({ setOpen }) => {
+const CreatePackage = ({ setOpen, fromEdit }) => {
   const initialValues = {
     imageUrl: "",
     name: "",
-  }
-  const [file, setFile] = useState(null)
-
-  const handleChange = file => {
-    setFile(file)
   }
 
   return (
     <Formik
       initialValues={initialValues}
-      validationSchema={addCategory}
+      // validationSchema={addCategory}
       onSubmit={fields => {
         setOpen(false)
       }}>
@@ -31,51 +24,17 @@ const AddCategory = ({ setOpen }) => {
           </div>
           <div className="modalContainer z-[100] flex w-[43.70364583333333vw] min-w-[550px] flex-col rounded-lg bg-white">
             <header className="border-b p-5">
-              <h1 className="text-xl font-bold">Add Category</h1>
+              <h1 className="text-xl font-bold">{fromEdit ? 'Edit Package' : 'Create Package'}</h1>
               <button
                 onClick={() => setOpen(false)}
                 className="absolute right-4 top-4 cursor-pointer rounded-lg p-2 hover:bg-secondary">
                 <IoMdClose className="h-[20px] w-[20px]" />
               </button>
             </header>
-            <div className="w-full">
-              <Dropzone onDrop={acceptedFiles => handleChange(acceptedFiles)}>
-                {({ getRootProps, getInputProps }) => (
-                  <section
-                    {...getRootProps()}
-                    className="mx-6 mt-4 flex h-[250px] border-spacing-5 cursor-pointer items-center justify-center rounded border border-dashed border-black hover:border-primary">
-                    <input
-                      {...getInputProps()}
-                      className="h-full w-full bg-red-400"
-                    />
-                    <div>
-                      {!Array.isArray(file) && (
-                        <p>
-                          Drag 'n' drop some files here, or click to select
-                          files
-                        </p>
-                      )}
-                      {Array.isArray(file) && (
-                        <div>
-                          <img
-                            className="max-h-[250px]"
-                            src={
-                              Array.isArray(file)
-                                ? URL.createObjectURL(file[0])
-                                : ""
-                            }
-                            alt=""
-                          />
-                        </div>
-                      )}
-                    </div>
-                  </section>
-                )}
-              </Dropzone>
-            </div>
+
             <body className="flex flex-col p-6">
               <Input
-                label={"Category Name"}
+                label={"Package Name"}
                 name={"name"}
                 type={"name"}
                 placeholder={"Name"}
@@ -84,11 +43,27 @@ const AddCategory = ({ setOpen }) => {
                 touched={touched}
                 showError={true}
               />
+
+              <div className="flex gap-4 mt-3">
+                <Input
+                  label={"Amount"}
+                  name={"amount"}
+                  type={"amount"}
+                  placeholder={"Minimum amount spent to avail this package"}
+                  width={"50%"}
+                />
+                <Input
+                  label={"Points"}
+                  name={"points"}
+                  type={"points"}
+                  placeholder={"Points required for this package"}
+                  width={"50%"}
+                />
+              </div>
               <label
                 htmlFor="colors"
                 className="mb-1 mt-4 flex items-center gap-2  text-sm font-medium">
-                Assign Menu Items{" "}
-                <div className="text-xs text-[#ada9a9cc]">(optional)</div>
+                Select Menu Item{" "}
               </label>
               <Select
                 styles={{
@@ -110,7 +85,6 @@ const AddCategory = ({ setOpen }) => {
                     primary: "#eda677",
                   },
                 })}
-                isMulti
                 name="colors"
                 options={[
                   {
@@ -139,15 +113,15 @@ const AddCategory = ({ setOpen }) => {
             </body>
             <div className="my-8 flex items-center justify-center gap-3">
               <button
-                type="button"
                 onClick={() => setOpen(false)}
+                type="button"
                 className=" rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ">
                 Cancel
               </button>
               <button
                 onClick={() => { }}
-                className="rounded-md bg-primary px-6 py-2 text-base font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
-                Add
+                className="rounded-md bg-primary px-4 py-2 text-base font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+                Create
               </button>
             </div>
           </div>
@@ -157,4 +131,4 @@ const AddCategory = ({ setOpen }) => {
   )
 }
 
-export default AddCategory
+export default CreatePackage
