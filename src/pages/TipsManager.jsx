@@ -10,10 +10,12 @@ const data = [
   {
     name: "John",
     age: 30,
+    widthdrawRequested: false,
   },
   {
     name: "Sara",
     age: 25,
+    widthdrawRequested: true,
   },
 ]
 
@@ -33,16 +35,28 @@ export default function TipsManager() {
         accessorFn: row => row.age,
         accessorKey: "age",
         header: "Balance",
+        Cell: ({ renderedCellValue }) => <>$ {renderedCellValue}</>,
+        muiTableHeadCellProps: tableHeader,
+        muiTableBodyCellProps: tableBody,
+      },
+      {
+        accessorKey: "widthdrawRequested",
+        Cell: ({ renderedCellValue }) => (
+          <div>{renderedCellValue === true ? "Yes" : "No"}</div>
+        ),
+        header: "Withdraw Request",
         muiTableHeadCellProps: tableHeader,
         muiTableBodyCellProps: tableBody,
       },
       {
         accessorFn: row => (
           <div className="gap- flex items-center justify-center gap-2">
-            <button className="flex items-center justify-center rounded-md bg-[#FFF0C7] px-2 py-[2px] text-primary">
-              Pay Tip
-              <FaDollarSign />
-            </button>
+            {row.widthdrawRequested && (
+              <button className="flex items-center justify-center rounded-md bg-[#FFF0C7] px-2 py-[2px] text-primary">
+                Pay Tip
+                <FaDollarSign />
+              </button>
+            )}
             <button
               onClick={() => setHistoryModal(true)}
               className="flex items-center justify-center gap-1 rounded-md bg-[#E9E9E9] px-2 py-[2px] ">
