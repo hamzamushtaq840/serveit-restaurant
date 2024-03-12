@@ -34,7 +34,7 @@ const Navbar = () => {
       </nav>
       <main className="ml-[266px] flex max-w-[calc(100vw-266px)] flex-1 flex-col ">
         <header
-          className={`border-[#D3D3D3 sticky top-0 z-30 flex h-[69px] items-center justify-between border-b bg-secondary p-6 shadow-sm`}>
+          className={`sticky top-0 z-30 flex h-[69px] items-center justify-between border-b border-[#D3D3D3] bg-secondary p-6 shadow-sm`}>
           <span className="text-xl font-medium">
             {trimmedName(location.pathname)}
           </span>

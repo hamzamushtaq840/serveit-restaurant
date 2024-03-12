@@ -17,10 +17,14 @@ const data = [
   {
     name: "Aman Ullah",
     email: "aman@gmail.com",
+    shiftTime: "09:30 - 18:30",
+    workingDays: ["M", "T", "W", "T", "F", "S", "S"],
   },
   {
     name: "Hamza Mushtaq",
     email: "hamzamushtaq@gmail.com",
+    shiftTime: "09:30 - 18:30",
+    workingDays: ["M", "T", "W", "T", "F", "S", "S"],
   },
 ]
 
@@ -40,6 +44,31 @@ export default function Servers() {
       {
         accessorKey: "email", //simple recommended way to define a column
         header: "Email",
+        muiTableHeadCellProps: tableHeader,
+        muiTableBodyCellProps: tableBody,
+      },
+      {
+        accessorKey: "shiftTime", //simple recommended way to define a column
+        header: "Shift Time",
+        muiTableHeadCellProps: tableHeader,
+        muiTableBodyCellProps: tableBody,
+      },
+      {
+        accessorFn: (row, index) => (
+          <div className="flex items-center justify-center gap-2">
+            {row.workingDays.map((day, index) => (
+              <div
+                className={`flex h-6 w-6 cursor-pointer items-center justify-center rounded-full border text-sm ${
+                  index !== 6
+                    ? "bg-primary text-white"
+                    : "bg-[#E9E9E9] text-sm text-[#575757] "
+                }`}>
+                {day}
+              </div>
+            ))}
+          </div>
+        ),
+        header: "Working Days",
         muiTableHeadCellProps: tableHeader,
         muiTableBodyCellProps: tableBody,
       },
@@ -76,7 +105,7 @@ export default function Servers() {
             onClick={() => {
               setAddServerModal(true)
             }}
-            className="bg-primarySub hover:bg-primarySub/90 my-1 ml-1 flex items-center gap-2 rounded-md px-3 py-1 text-white">
+            className="my-1 ml-1 flex items-center gap-2 rounded-md bg-primarySub px-3 py-1 text-white hover:bg-primarySub/90">
             Add New
             <IoIosAddCircleOutline />
           </button>

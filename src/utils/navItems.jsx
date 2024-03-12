@@ -1,13 +1,15 @@
+import { CiViewList } from "react-icons/ci"
+import { FaChair } from "react-icons/fa"
+import { IoPeople } from "react-icons/io5"
 import { LuClock9 } from "react-icons/lu"
+import { MdOutlineTableRestaurant } from "react-icons/md"
 import Customers from "../assets/navbar/Customers"
 import DashboardIcon from "../assets/navbar/DashboardIcon"
 import Menu from "../assets/navbar/Menu"
 import Order from "../assets/navbar/Order"
 import Rewards from "../assets/navbar/Rewards"
 import Settings from "../assets/navbar/Settings"
-import TableManager from "../assets/navbar/TableManager"
 import TipsManager from "../assets/navbar/TipsManager"
-import Reviews from "../assets/navbar/Reviews"
 
 export const navItems = [
   {
@@ -22,12 +24,12 @@ export const navItems = [
   },
   {
     name: "Table Manager",
-    image: <TableManager />,
+    image: <MdOutlineTableRestaurant className="h-[17px] w-[17px]" />,
     to: "/table-manager",
   },
   {
     name: "Chair Manager",
-    image: <TableManager />,
+    image: <FaChair className="h-[17px] w-[17px]" />,
     to: "/chair-manager",
   },
   {
@@ -41,13 +43,18 @@ export const navItems = [
     to: "/tips-manager",
   },
   {
+    name: "Inventory",
+    image: <CiViewList className="h-[17px] w-[17px]" />,
+    to: "/inventory",
+  },
+  {
     name: "Customers",
     image: <Customers />,
     to: "/customers",
   },
   {
     name: "Employees",
-    image: <Menu />,
+    image: <IoPeople className="h-[17px] w-[17px]" />,
     to: "/employees",
   },
   {
@@ -66,7 +73,7 @@ export const navItems = [
     to: "/rewards",
   },
   {
-    name: "Settigs",
+    name: "Settings",
     image: <Settings />,
     to: "/settings  ",
   },

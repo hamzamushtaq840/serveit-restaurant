@@ -63,7 +63,55 @@ const AddKitchenUserModal = ({ setOpen }) => {
                 touched={touched}
                 showError={true}
               />
+              <div className="flex gap-2">
+                <Input
+                  label={"Shift Start Time"}
+                  name={"password"}
+                  type={"time"}
+                  placeholder={"Start Time"}
+                  width={"50%"}
+                  errors={errors}
+                  touched={touched}
+                  showError={true}
+                />
+                <Input
+                  label={"Shift End Time"}
+                  name={"password"}
+                  type={"time"}
+                  placeholder={"End Time"}
+                  width={"50%"}
+                  errors={errors}
+                  touched={touched}
+                  showError={true}
+                />
+              </div>
+              <div className="flex flex-col gap-3">
+                <label className="font-medium">
+                  Select Working Days{" "}
+                  <label className="ml-2 cursor-pointer text-xs text-primary hover:underline">
+                    Mon-Fri{" "}
+                  </label>
+                </label>
+                <div className="flex gap-2">
+                  {[
+                    { label: "M", value: 1 },
+                    { label: "T", value: 2 },
+                    { label: "W", value: 3 },
+                    { label: "T", value: 4 },
+                    { label: "F", value: 5 },
+                    { label: "S", value: 6 },
+                    { label: "S", value: 7 },
+                  ].map(v => {
+                    return (
+                      <div className="flex h-7 w-7 cursor-pointer items-center justify-center rounded-full border bg-[#E9E9E9] text-sm text-[#575757]">
+                        {v.label}
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
             </body>
+
             <div className="my-8 flex items-center justify-center gap-3">
               <button
                 onClick={() => {

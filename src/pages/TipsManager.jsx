@@ -53,8 +53,8 @@ export default function TipsManager() {
           <div className="gap- flex items-center justify-center gap-2">
             {row.widthdrawRequested && (
               <button className="flex items-center justify-center rounded-md bg-[#FFF0C7] px-2 py-[2px] text-primary">
-                Pay Tip
                 <FaDollarSign />
+                Marked as Paid
               </button>
             )}
             <button

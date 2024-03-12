@@ -1,15 +1,11 @@
 import { MaterialReactTable, useMaterialReactTable } from "material-react-table"
 import React, { useMemo, useState } from "react"
-import { RiDeleteBin3Line } from "react-icons/ri"
-import { tableBody, tableHeader } from "./../../utils/consts"
-import { MdBlock } from "react-icons/md"
-import { CgUnblock } from "react-icons/cg"
-import { TbEdit, TbLockOpenOff } from "react-icons/tb"
-import { TbLock } from "react-icons/tb"
-import { TbLockOpen } from "react-icons/tb"
-import { IoIosAddCircleOutline } from "react-icons/io"
-import DeleteModal from "../generic/DeleteModal"
 import toast from "react-hot-toast"
+import { IoIosAddCircleOutline } from "react-icons/io"
+import { RiDeleteBin3Line } from "react-icons/ri"
+import { TbEdit } from "react-icons/tb"
+import DeleteModal from "../generic/DeleteModal"
+import { tableBody, tableHeader } from "./../../utils/consts"
 import AddKitchenUserModal from "./AddKitchenUserModal"
 
 //simple data example - Check out https://www.material-react-table.com/docs/examples/remote for a more complex example
@@ -18,16 +14,16 @@ const data = [
     name: "John Doe",
     email: "johndoe@gmail.com",
     status: "Active",
-    orders: 3,
-    mobile: 32423323243,
+    shiftTime: "09:30 - 18:30",
+    workingDays: ["M", "T", "W", "T", "F", "S", "S"],
     amountSpent: 323,
   },
   {
     name: "Sara Lorene",
     email: "sara@gmail.com",
     status: "Blocked",
-    orders: 3,
-    mobile: 32423323243,
+    shiftTime: "09:30 - 18:30",
+    workingDays: ["M", "T", "W", "T", "F", "S", "S"],
     amountSpent: 323,
   },
 ]
@@ -48,6 +44,31 @@ export default function KitchenUsers() {
       {
         accessorKey: "email", //simple recommended way to define a column
         header: "Email",
+        muiTableHeadCellProps: tableHeader,
+        muiTableBodyCellProps: tableBody,
+      },
+      {
+        accessorKey: "shiftTime", //simple recommended way to define a column
+        header: "Shift Time",
+        muiTableHeadCellProps: tableHeader,
+        muiTableBodyCellProps: tableBody,
+      },
+      {
+        accessorFn: (row, index) => (
+          <div className="flex items-center justify-center gap-2">
+            {row.workingDays.map((day, index) => (
+              <div
+                className={`flex h-6 w-6 cursor-pointer items-center justify-center rounded-full border text-sm ${
+                  index !== 6
+                    ? "bg-primary text-white"
+                    : "bg-[#E9E9E9] text-sm text-[#575757] "
+                }`}>
+                {day}
+              </div>
+            ))}
+          </div>
+        ),
+        header: "Working Days",
         muiTableHeadCellProps: tableHeader,
         muiTableBodyCellProps: tableBody,
       },
@@ -84,7 +105,7 @@ export default function KitchenUsers() {
             onClick={() => {
               setKitchenUserModal(true)
             }}
-            className="bg-primarySub hover:bg-primarySub/90 my-1 ml-1 flex items-center gap-2 rounded-md px-3 py-1 text-white">
+            className="my-1 ml-1 flex items-center gap-2 rounded-md bg-primarySub px-3 py-1 text-white hover:bg-primarySub/90">
             Add New
             <IoIosAddCircleOutline />
           </button>

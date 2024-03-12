@@ -17,6 +17,7 @@ import Signup from "./pages/Signup"
 import TableManager from "./pages/TableManager"
 import TimeSheet from "./pages/TimeSheet"
 import TipsManager from "./pages/TipsManager"
+import Inventory from "./pages/Inventory"
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path="customers" element={<Customers />} />
           <Route path="reviews" element={<Reviews />} />
           <Route path="employees" element={<Employees />} />
+          <Route path="inventory" element={<Inventory />} />
           <Route path="timesheet" element={<TimeSheet />} />
           <Route path="rewards" element={<Rewards />} />
           <Route path="settings" element={<Settings />} />
