@@ -59,7 +59,7 @@ export default function Inventory() {
     {
       header: "Avalibility",
       accessorFn: (row, index) => (
-        <div className="flex- flex items-center justify-center gap-2">
+        <div className="flex items-center justify-center gap-2">
           <div className="h-[10px] w-[70%] rounded-full bg-[#cfcfcf7c]">
             <div
               style={{ width: `${row.percentage}%` }}
