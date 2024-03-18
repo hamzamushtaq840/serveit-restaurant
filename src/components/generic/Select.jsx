@@ -15,7 +15,7 @@ const Select = ({
 }) => {
   return (
     <div style={{ width: width, marginTop: mt }} className={`relative`}>
-      <label for={name} className="font-medium">
+      <label for={name} className="text-lg font-medium">
         {label}
       </label>
       <div class="mt-1">

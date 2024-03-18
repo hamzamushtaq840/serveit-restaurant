@@ -24,7 +24,9 @@ const CreatePackage = ({ setOpen, fromEdit }) => {
           </div>
           <div className="modalContainer z-[100] flex w-[43.70364583333333vw] min-w-[550px] flex-col rounded-lg bg-white">
             <header className="border-b p-5">
-              <h1 className="text-xl font-bold">{fromEdit ? 'Edit Package' : 'Create Package'}</h1>
+              <h1 className="text-xl font-bold">
+                {fromEdit ? "Edit Package" : "Create Package"}
+              </h1>
               <button
                 onClick={() => setOpen(false)}
                 className="absolute right-4 top-4 cursor-pointer rounded-lg p-2 hover:bg-secondary">
@@ -44,7 +46,7 @@ const CreatePackage = ({ setOpen, fromEdit }) => {
                 showError={true}
               />
 
-              <div className="flex gap-4 mt-3">
+              {/* <div className="flex gap-4 mt-3">
                 <Input
                   label={"Amount"}
                   name={"amount"}
@@ -52,17 +54,18 @@ const CreatePackage = ({ setOpen, fromEdit }) => {
                   placeholder={"Minimum amount spent to avail this package"}
                   width={"50%"}
                 />
-                <Input
-                  label={"Points"}
-                  name={"points"}
-                  type={"points"}
-                  placeholder={"Points required for this package"}
-                  width={"50%"}
-                />
-              </div>
+              </div> */}
+              <Input
+                label={"Points"}
+                name={"points"}
+                type={"points"}
+                mt={"10px"}
+                placeholder={"Points required for this package"}
+                width={"100%"}
+              />
               <label
                 htmlFor="colors"
-                className="mb-1 mt-4 flex items-center gap-2  text-sm font-medium">
+                className="mb-1 mt-4 flex items-center gap-2 font-medium">
                 Select Menu Item{" "}
               </label>
               <Select
@@ -119,7 +122,7 @@ const CreatePackage = ({ setOpen, fromEdit }) => {
                 Cancel
               </button>
               <button
-                onClick={() => { }}
+                onClick={() => {}}
                 className="rounded-md bg-primary px-4 py-2 text-base font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
                 Create
               </button>

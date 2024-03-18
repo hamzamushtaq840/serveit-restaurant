@@ -1,30 +1,97 @@
-import React from "react"
+import React, { useState } from "react"
+import General from "../components/settings/General"
+import Themes from "../components/settings/Themes"
+import PaymentGateway from "../components/settings/PaymentGateway"
+import Social from "../components/settings/Social"
+import PromoDiscount from "../components/settings/PromoDiscount"
+import Reviews from "../components/settings/Reviews"
 
 const Settings = () => {
+  const [currentTab, setCurrentTab] = useState("General")
+
+  const settingTabs = {
+    General: <General />,
+    Themes: <Themes />,
+    PaymentGateway: <PaymentGateway />,
+    Social: <Social />,
+    PromoDiscount: <PromoDiscount />,
+    Reviews: <Reviews />,
+  }
+
   return (
-    <div className="mx-5 my-4 flex h-full flex-col gap-6 ">
-      <div className="mt-3 grid grid-cols-6 divide-x-2 divide-[#cccccc66] text-[#9E9E9E] shadow">
-        <div className="cursor-pointer bg-white py-3 text-center text-primary">
+    <div className="mx-5 my-4 flex h-full flex-col gap-4 ">
+      <div className="mt-2 grid grid-cols-6 divide-x-2 divide-[#cccccc66] overflow-hidden rounded text-[#9E9E9E] shadow">
+        <div
+          onClick={() => {
+            setCurrentTab("General")
+          }}
+          className={`cursor-pointer bg-white py-3 text-center ${
+            currentTab === "General"
+              ? "font-semibold text-primary"
+              : "hover:text-primary"
+          }`}>
           General
         </div>
-        <div className="cursor-pointer bg-white py-3 text-center hover:text-primary">
+        <div
+          onClick={() => {
+            setCurrentTab("Themes")
+          }}
+          className={`cursor-pointer bg-white py-3 text-center ${
+            currentTab === "Themes"
+              ? "font-semibold text-primary"
+              : "hover:text-primary"
+          }`}>
           Themes
         </div>
-        <div className="cursor-pointer bg-white py-3 text-center hover:text-primary">
+        <div
+          onClick={() => {
+            setCurrentTab("PaymentGateway")
+          }}
+          className={`cursor-pointer bg-white py-3 text-center ${
+            currentTab === "PaymentGateway"
+              ? "font-semibold text-primary"
+              : "hover:text-primary"
+          }`}>
           Payment Gateway
         </div>
-        <div className="cursor-pointer bg-white py-3 text-center hover:text-primary">
-          Tax Percentage
+        <div
+          onClick={() => {
+            setCurrentTab("PromoDiscount")
+          }}
+          className={`cursor-pointer bg-white py-3 text-center ${
+            currentTab === "PromoDiscount"
+              ? "font-semibold text-primary"
+              : "hover:text-primary"
+          }`}>
+          Promo Codes
         </div>
-        <div className="cursor-pointer bg-white py-3 text-center hover:text-primary">
-          Promo Discount
-        </div>
-        <div className="cursor-pointer bg-white py-3 text-center hover:text-primary">
+        <div
+          onClick={() => {
+            setCurrentTab("Reviews")
+          }}
+          className={`cursor-pointer bg-white py-3 text-center ${
+            currentTab === "Reviews"
+              ? "font-semibold text-primary"
+              : "hover:text-primary"
+          }`}>
           Reviews
+        </div>
+        <div
+          onClick={() => {
+            setCurrentTab("Social")
+          }}
+          className={`cursor-pointer bg-white py-3 text-center ${
+            currentTab === "Social"
+              ? "font-semibold text-primary"
+              : "hover:text-primary"
+          }`}>
+          Social
         </div>
       </div>
 
-      <div className="flex-1 bg-white p-6 shadow-lg">Settings</div>
+      <div className="flex-1 rounded-md bg-white p-6 shadow-lg">
+        {settingTabs[currentTab]}
+      </div>
     </div>
   )
 }

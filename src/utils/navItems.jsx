@@ -1,5 +1,5 @@
-import { CiViewList } from "react-icons/ci"
 import { FaChair } from "react-icons/fa"
+import { GoPackage } from "react-icons/go"
 import { IoPeople } from "react-icons/io5"
 import { LuClock9 } from "react-icons/lu"
 import { MdOutlineTableRestaurant } from "react-icons/md"
@@ -44,7 +44,7 @@ export const navItems = [
   },
   {
     name: "Inventory",
-    image: <CiViewList className="h-[17px] w-[17px]" />,
+    image: <GoPackage className="h-[18px] w-[18px]" />,
     to: "/inventory",
   },
   {

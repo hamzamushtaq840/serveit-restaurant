@@ -16,15 +16,15 @@ const TipsHistoryModal = ({ setModal }) => {
           </button>
         </header>
         <body className="p-6">
-          <div className="bg-primarySub grid h-10 grid-cols-5 items-center px-4 text-white">
+          <div className="grid h-10 grid-cols-5 items-center bg-primarySub px-4 text-white">
             <span className="text-center">Date</span>
             <span className="text-center">Total</span>
             <span className="text-center">Widraw</span>
-            <span className="text-center">Paid Via</span>
+            <span className="text-center">Payment Method</span>
             <span className="text-center">Balance</span>
           </div>
           <div className="flex max-h-[550px] flex-col divide-y-2 divide-[#ccc] overflow-auto text-white">
-            {[1, 2, 3, 4, 5, 6].map(item => (
+            {[1, 2, 3, 4, 5, 6].map((item, index) => (
               <div className="mb-2 grid grid-cols-5 px-4 py-3 text-black">
                 <span className="text-center">01/19/2024</span>
                 <span className="flex items-center justify-center">
@@ -35,7 +35,9 @@ const TipsHistoryModal = ({ setModal }) => {
                   <span>$</span>
                   <span>20</span>
                 </span>
-                <span className="text-center">Cash</span>
+                <span className="text-center">
+                  {index % 2 === 0 ? "Pay Check" : "Cash"}
+                </span>
                 <span className="flex items-center justify-center">
                   <span>$</span>
                   <span>20</span>

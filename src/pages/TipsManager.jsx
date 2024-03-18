@@ -4,6 +4,7 @@ import { CiViewList } from "react-icons/ci"
 import { FaDollarSign } from "react-icons/fa"
 import TipsHistoryModal from "../components/tipsManager/TipsHistoryModal"
 import { tableBody, tableHeader } from "../utils/consts"
+import PayTip from "../components/tipsManager/PayTip"
 
 //simple data example - Check out https://www.material-react-table.com/docs/examples/remote for a more complex example
 const data = [
@@ -20,6 +21,7 @@ const data = [
 ]
 
 export default function TipsManager() {
+  const [payTipModal, setPayTipModal] = useState(false)
   const [historyModal, setHistoryModal] = useState(false)
 
   const columns = useMemo(
@@ -52,9 +54,11 @@ export default function TipsManager() {
         accessorFn: row => (
           <div className="gap- flex items-center justify-center gap-2">
             {row.widthdrawRequested && (
-              <button className="flex items-center justify-center rounded-md bg-[#FFF0C7] px-2 py-[2px] text-primary">
+              <button
+                onClick={() => setPayTipModal(true)}
+                className="flex items-center justify-center rounded-md bg-[#FFF0C7] px-2 py-[2px] text-primary">
                 <FaDollarSign />
-                Marked as Paid
+                Pay Tip
               </button>
             )}
             <button
@@ -91,6 +95,7 @@ export default function TipsManager() {
     <div className="p-6">
       <MaterialReactTable table={table} />
       {historyModal && <TipsHistoryModal setModal={setHistoryModal} />}
+      {payTipModal && <PayTip setModal={setPayTipModal} />}
     </div>
   )
 }
