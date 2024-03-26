@@ -18,6 +18,7 @@ import TableManager from "./pages/TableManager"
 import TimeSheet from "./pages/TimeSheet"
 import TipsManager from "./pages/TipsManager"
 import Inventory from "./pages/Inventory"
+import AllCategories from "./components/menu/AllCategories"
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route element={<Navbar />}>
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="menu" element={<Menu />} />
+          <Route path="menu/categories" element={<AllCategories />} />
           <Route path="tips-manager" element={<TipsManager />} />
           <Route path="table-manager" element={<TableManager />} />
           <Route path="chair-manager" element={<ChairManager />} />

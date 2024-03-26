@@ -6,10 +6,9 @@ import { RiDeleteBin3Line } from "react-icons/ri"
 import { TbEdit } from "react-icons/tb"
 import DeleteModal from "../components/generic/DeleteModal"
 import { tableBody, tableHeader } from "../utils/consts"
-import { IoStar } from "react-icons/io5";
+import { IoStar } from "react-icons/io5"
 import OrderSummary from "../components/orders/OrderSummary"
 import EditOrder from "../components/orders/EditOrder"
-
 
 const data = [
   {
@@ -29,7 +28,7 @@ const data = [
     status: "Accepted",
     amount: 2000,
     reviews: 3,
-    paymentStatus: 'Pending',
+    paymentStatus: "Pending",
     time: "2 hours ago",
   },
   {
@@ -104,20 +103,25 @@ export default function Orders() {
       accessorFn: row => (
         <div
           className={`${row.status === "Open" && "rounded-md bg-[#E9E9E9] py-1"}
-            ${row.status === "Accepted" &&
-            "rounded-md bg-[#ECFFBA] py-1 text-[#80AF00]"
+            ${
+              row.status === "Accepted" &&
+              "rounded-md bg-[#ECFFBA] py-1 text-[#80AF00]"
             }
-            ${row.status === "Ready" &&
-            "rounded-md bg-[#E1CDFF] py-1 text-[#934AFF]"
+            ${
+              row.status === "Ready" &&
+              "rounded-md bg-[#E1CDFF] py-1 text-[#934AFF]"
             }
-            ${row.status === "Preparing" &&
-            "rounded-md bg-[#FFF0C7] py-1 text-[#D3A729]"
+            ${
+              row.status === "Preparing" &&
+              "rounded-md bg-[#FFF0C7] py-1 text-[#D3A729]"
             }
-            ${row.status === "Canceled" &&
-            "rounded-md bg-[#FFE4DE] py-1 text-[#B71D18]"
+            ${
+              row.status === "Canceled" &&
+              "rounded-md bg-[#FFE4DE] py-1 text-[#B71D18]"
             }
-            ${row.status === "Completed" &&
-            "rounded-md bg-[#D6F1E8] py-1 text-[#0B7E6E]"
+            ${
+              row.status === "Completed" &&
+              "rounded-md bg-[#D6F1E8] py-1 text-[#0B7E6E]"
             }
             `}>
           {row.status}
@@ -151,7 +155,7 @@ export default function Orders() {
       accessorKey: "reviews",
       header: "Reviews",
       accessorFn: row => (
-        <div className="text-yellow-500 flex gap-2 justify-center">
+        <div className="flex justify-center gap-2 text-yellow-500">
           <IoStar />
           <IoStar />
           <IoStar />
@@ -171,8 +175,18 @@ export default function Orders() {
     {
       accessorFn: (row, index) => (
         <div className="flex items-center justify-center ">
-          <LiaClipboardListSolid onClick={() => { setSummaryModal(true) }} className="h-[28px] w-[28px] cursor-pointer rounded-full p-1 text-[#D3A729] hover:bg-[#FFF0C7]" />
-          <TbEdit onClick={() => { setEditModal(true) }} className="h-[28px] w-[28px] cursor-pointer rounded-full p-1 text-blue-500 hover:bg-blue-200" />
+          <LiaClipboardListSolid
+            onClick={() => {
+              setSummaryModal(true)
+            }}
+            className="h-[28px] w-[28px] cursor-pointer rounded-full p-1 text-[#D3A729] hover:bg-[#FFF0C7]"
+          />
+          <TbEdit
+            onClick={() => {
+              setEditModal(true)
+            }}
+            className="h-[28px] w-[28px] cursor-pointer rounded-full p-1 text-blue-500 hover:bg-blue-200"
+          />
           <RiDeleteBin3Line
             onClick={() => {
               setDeleteModal(true)
@@ -214,8 +228,20 @@ export default function Orders() {
           toast.success("Order deleted successfully")
         }}
       />
-      {summaryModal && <OrderSummary onClose={() => { setSummaryModal(false) }} />}
-      {editModal && <EditOrder onClose={() => { setEditModal(false) }} />}
+      {summaryModal && (
+        <OrderSummary
+          onClose={() => {
+            setSummaryModal(false)
+          }}
+        />
+      )}
+      {editModal && (
+        <EditOrder
+          onClose={() => {
+            setEditModal(false)
+          }}
+        />
+      )}
     </div>
   )
 }

@@ -1,11 +1,14 @@
-import React from "react"
+import React, { useState } from "react"
 import { FiEdit } from "react-icons/fi"
 import { MdOutlineFastfood } from "react-icons/md"
 import menuItem from "../../assets/menu/menuItem.jpg"
 import arrowDown from "../../assets/arrowDown.svg"
 import filter from "../../assets/filter.svg"
+import AddMenuItem from "./menuItem/AddMenuItem"
 
 const MenuItems = () => {
+  const [addMenuModal, setAddMenuModal] = useState(false)
+
   return (
     <div className="mt-8 flex flex-col">
       <div className="flex items-center justify-between">
@@ -16,7 +19,9 @@ const MenuItems = () => {
             <img src={arrowDown} alt="" srcset="" />
           </div>
         </div>
-        <button className="h-[30px] rounded-lg bg-primary px-12 text-sm text-white hover:bg-primary/80">
+        <button
+          onClick={() => setAddMenuModal(true)}
+          className="h-[30px] rounded-lg bg-primary px-12 text-sm text-white hover:bg-primary/80">
           Add
         </button>
       </div>
@@ -52,6 +57,7 @@ const MenuItems = () => {
           </div>
         ))}
       </div>
+      {addMenuModal && <AddMenuItem setOpen={setAddMenuModal} />}
     </div>
   )
 }
