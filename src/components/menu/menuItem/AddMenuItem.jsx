@@ -1,12 +1,11 @@
+import { Form, Formik } from "formik"
 import React, { useState } from "react"
 import Dropzone from "react-dropzone"
 import { IoMdClose } from "react-icons/io"
-import Input from "../../generic/Input"
-import Creatable from "react-select/creatable"
-import Select from "react-select"
-import { addCategory } from "../../../utils/schema"
-import { Form, Formik } from "formik"
 import { MdDeleteOutline } from "react-icons/md"
+import Select from "react-select"
+import Creatable from "react-select/creatable"
+import Input from "../../generic/Input"
 import Select2 from "../../generic/Select"
 
 const AddMenuItem = ({ setOpen }) => {

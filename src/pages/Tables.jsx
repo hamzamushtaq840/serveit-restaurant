@@ -1,16 +1,11 @@
 import { MaterialReactTable, useMaterialReactTable } from "material-react-table"
-import React, { useMemo, useRef, useState } from "react"
-import { CiSettings } from "react-icons/ci"
-import { RiDeleteBin3Line } from "react-icons/ri"
-import { TbEdit } from "react-icons/tb"
-import { tableBody, tableHeader } from "../utils/consts"
-import DeleteModal from "../components/generic/DeleteModal"
-import CreatePackage from "../components/rewards/CreatePackage"
-import Setting from "../components/rewards/Setting"
 import QRCode from "qrcode.react"
 import QRious from "qrious"
-import { LiaDownloadSolid } from "react-icons/lia"
+import React, { useMemo, useState } from "react"
 import toast from "react-hot-toast"
+import { LiaDownloadSolid } from "react-icons/lia"
+import { TbEdit } from "react-icons/tb"
+import { tableBody, tableHeader } from "../utils/consts"
 
 //simple data example - Check out https://www.material-react-table.com/docs/examples/remote for a more complex example
 const data = [
@@ -111,14 +106,6 @@ export default function Tables() {
                 downloadQRCode()
               }}
               className="h-[32px] w-[32px] cursor-pointer rounded-full p-1 text-orange-500 hover:bg-orange-200"
-            />
-            <TbEdit
-              onClick={() => {
-                // setCreateModal(true)
-                // setFrom(true)
-                // downloadQRCode()
-              }}
-              className="h-[28px] w-[28px] cursor-pointer rounded-full p-1 text-blue-500 hover:bg-blue-200"
             />
           </div>
         ),

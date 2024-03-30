@@ -44,9 +44,6 @@ const TableManager = () => {
       y: 390,
       call: false,
       server: { id: 1, name: "Bill", color: "#62A3B1" },
-      orderStatus: "Ready",
-      orderTime: "green",
-      time: "6m : 10s",
     },
     {
       tableNo: 4,
@@ -70,9 +67,7 @@ const TableManager = () => {
       y: 390,
       call: false,
       server: { id: 1, name: "Wendy", color: "#626AB1" },
-      orderStatus: "Ready",
       orderTime: "red",
-      time: "1h : 02m : 6s",
     },
     {
       id: 5,
@@ -130,7 +125,7 @@ const TableManager = () => {
             navigate("edit")
           }}
           className="flex h-[35px] items-center gap-1 rounded-md bg-primary px-6 text-white">
-          Manage
+          Edit
           <TbEdit className="h-4 w-4" />
         </button>
       </div>
@@ -154,9 +149,11 @@ const TableManager = () => {
             size={{ width: v.width, height: v.height }}
             position={{ x: v.x, y: v.y }}>
             <div className="">
-              <div className="absolute left-2 top-1 text-sm font-semibold text-[#ccc]">
-                #23475
-              </div>
+              {v.orderStatus && (
+                <div className="absolute left-2 top-1 text-sm font-semibold text-[#ccc]">
+                  #23475
+                </div>
+              )}
               <div className="flex flex-1 flex-col items-center justify-center gap-1">
                 <div
                   style={{ backgroundColor: v.server.color }}
@@ -167,46 +164,49 @@ const TableManager = () => {
                   </div>
                   <span className="text-sm">{v.server.name}</span>
                 </div>
-                {/* <div className="flex items-center gap-1 text-xs">
-                  <span className="rubik">{v.orderStatus}</span>
-                  {v.orderStatus === "Ready" && (
-                    <FaRegCheckCircle className="text-green-500" />
-                  )}
-                  {v.orderStatus === "Preparing" && (
-                    <BsFire className="text-primary" />
-                  )}
-                  {v.orderStatus === "Delivered" && (
-                    <FaUtensils className="text-blue-400" />
-                  )}
-                </div> */}
-                <div className="mt-1 flex gap-2">
-                  <div
-                    style={{
-                      backgroundColor:
-                        v.orderTime === "green"
-                          ? "#F0F0F0"
-                          : v.orderTime === "red"
-                            ? "#fee2e2"
-                            : "#e7b31616",
-                      color:
-                        v.orderTime === "green"
-                          ? "#000000"
-                          : v.orderTime === "red"
-                            ? "#EB262B"
-                            : "#E7B416",
-                      border:
-                        v.orderTime === "red"
-                          ? "2px solid #ff5858"
-                          : v.orderTime === "orange"
-                            ? "2px solid #E7B416"
-                            : "",
-                    }}
-                    className="flex h-6 items-center justify-center rounded-md px-2 text-sm font-semibold">
-                    {v.time}
+                {v.orderStatus && (
+                  <div className="flex items-center gap-1 text-xs">
+                    <span className="rubik">{v.orderStatus}</span>
+                    {v.orderStatus === "Ready" && (
+                      <FaRegCheckCircle className="text-green-500" />
+                    )}
+                    {v.orderStatus === "Preparing" && (
+                      <BsFire className="text-primary" />
+                    )}
+                    {v.orderStatus === "Delivered" && (
+                      <FaUtensils className="text-blue-400" />
+                    )}
                   </div>
-                </div>
+                )}
+                {v.time && (
+                  <div className="mt-1 flex gap-2">
+                    <div
+                      style={{
+                        backgroundColor:
+                          v.orderTime === "green"
+                            ? "#F0F0F0"
+                            : v.orderTime === "red"
+                              ? "#fee2e2"
+                              : "#e7b31616",
+                        color:
+                          v.orderTime === "green"
+                            ? "#000000"
+                            : v.orderTime === "red"
+                              ? "#EB262B"
+                              : "#E7B416",
+                        border:
+                          v.orderTime === "red"
+                            ? "2px solid #ff5858"
+                            : v.orderTime === "orange"
+                              ? "2px solid #E7B416"
+                              : "",
+                      }}
+                      className="flex h-6 items-center justify-center rounded-md px-2 text-sm font-semibold">
+                      {v.time}
+                    </div>
+                  </div>
+                )}
               </div>
-              <div></div>
               {v.call && (
                 <div className="bell-icon2 absolute right-[-5px] top-[-10px] rounded-full bg-primary p-2 text-white">
                   <FaBell className="bell-icon" />
