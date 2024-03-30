@@ -4,6 +4,7 @@ import logo from "./../../assets/logo.svg"
 import avatar from "./../../assets/avatar.svg"
 import { trimmedName } from "../../utils/trimLocationName"
 import { navItems } from "../../utils/navItems"
+import SingleNavLink from "./SingleNavLink"
 
 const Navbar = () => {
   const location = useLocation()
@@ -15,20 +16,7 @@ const Navbar = () => {
         <hr />
         <div className="gap flex w-full flex-col gap-1 p-2">
           {navItems.map((v, i) => {
-            return (
-              <NavLink
-                key={i}
-                to={v.to}
-                className={({ isActive }) =>
-                  (isActive
-                    ? "active bg-primary bg-opacity-[0.10] fill-primary font-semibold text-primary duration-500"
-                    : "text-[#6B6B6B] hover:bg-[#cecece3f]") +
-                  " flex items-center gap-2 rounded-md p-3 font-medium transition-all"
-                }>
-                {v.image}
-                {v.name}
-              </NavLink>
-            )
+            return <SingleNavLink v={v} i={i} />
           })}
         </div>
       </nav>

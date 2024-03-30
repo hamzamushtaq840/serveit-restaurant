@@ -7,6 +7,7 @@ import Select from "react-select"
 import { addCategory } from "../../../utils/schema"
 import { Form, Formik } from "formik"
 import { MdDeleteOutline } from "react-icons/md"
+import Select2 from "../../generic/Select"
 
 const AddMenuItem = ({ setOpen }) => {
   const initialValues = {
@@ -17,13 +18,7 @@ const AddMenuItem = ({ setOpen }) => {
     price: "",
     salePrice: "",
     options: [],
-    inventory: [
-      {
-        name: "",
-        quantity: "",
-        price: "",
-      },
-    ],
+    inventory: [],
   }
   const [file, setFile] = useState(null)
 
@@ -43,7 +38,7 @@ const AddMenuItem = ({ setOpen }) => {
           <div className="fixed inset-0 transition-opacity" aria-hidden="true">
             <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
           </div>
-          <div className="modalContainer z-[100] flex max-h-[90vh] w-[43.70364583333333vw] min-w-[550px] flex-col overflow-auto rounded-lg bg-white">
+          <div className="modalContainer z-[100] flex max-h-[95vh] w-[43.70364583333333vw] min-w-[550px] flex-col overflow-auto rounded-lg bg-white">
             <header className="border-b p-5">
               <h1 className="text-xl font-bold">Add Menu Item</h1>
               <button
@@ -87,6 +82,7 @@ const AddMenuItem = ({ setOpen }) => {
                 )}
               </Dropzone>
             </div>
+
             <body className="flex flex-col p-6">
               <Input
                 label={"Item Name"}
@@ -112,23 +108,23 @@ const AddMenuItem = ({ setOpen }) => {
                 rows={5}
               />
 
-              <div className="mt-2 flex gap-2">
-                <Input
-                  label={"Category"}
-                  name={"name"}
-                  type={"name"}
-                  placeholder={"Name"}
-                  width={"50%"}
-                  errors={errors}
-                  touched={touched}
-                  showError={true}
-                />
+              <div className="mt-2 flex gap-3">
+                <div className="w-1/2">
+                  <Select2
+                    label={"Category"}
+                    name={"category"}
+                    options={["A", "B", "C", "D"]}
+                    placeholder={""}
+                    showError
+                    errors={errors}
+                    touched={touched}
+                  />
+                </div>
                 <Input
                   label={"Price"}
                   name={"name"}
-                  optional
                   type={"name"}
-                  placeholder={"Name"}
+                  placeholder={"$"}
                   width={"50%"}
                   errors={errors}
                   touched={touched}
@@ -205,7 +201,7 @@ const AddMenuItem = ({ setOpen }) => {
                     <div className="flex flex-col">
                       {values.options[index].options.map((o, i) => (
                         <div className="ml-2 mt-2 flex items-center gap-4">
-                          <span className="mr-2 w-3 pt-7 font-semibold">
+                          <span className="mr-2 w-3 pt-6 font-semibold">
                             {i + 1}.
                           </span>
                           <div className="flex w-[33%] flex-col">
@@ -214,7 +210,7 @@ const AddMenuItem = ({ setOpen }) => {
                             </label>
                             <div class="mt-1">
                               <input
-                                placeholder={"i.e Small"}
+                                placeholder={"i.e Small, Medium or  Large"}
                                 className={`w-full rounded-lg border-0 px-2 py-1 text-gray-900 shadow-sm outline-none ring-1 ring-inset ring-ring placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-focus sm:text-sm sm:leading-6`}
                               />
                             </div>
@@ -242,7 +238,7 @@ const AddMenuItem = ({ setOpen }) => {
                                 ].options.filter((_, j) => j !== i)
                                 setFieldValue("options", temp)
                               }}
-                              className="mt-7 h-6 w-6 cursor-pointer text-red-400 hover:text-red-500"
+                              className="mt-6 h-6 w-6 cursor-pointer text-red-400 hover:text-red-500"
                             />
                           )}
                         </div>
@@ -285,6 +281,7 @@ const AddMenuItem = ({ setOpen }) => {
                 Select Inventory
                 <span className="text-xs text-grey ">&nbsp; (Optional)</span>
               </label>
+
               <Select
                 styles={{
                   control: (baseStyles, state) => ({
@@ -333,6 +330,7 @@ const AddMenuItem = ({ setOpen }) => {
                 className="basic-multi-select"
                 classNamePrefix="select"
               />
+
               {values.inventory.map((v, i) => {
                 return (
                   <div className="mt-2 flex items-center gap-4">

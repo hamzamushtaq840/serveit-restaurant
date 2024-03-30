@@ -10,6 +10,10 @@ import Order from "../assets/navbar/Order"
 import Rewards from "../assets/navbar/Rewards"
 import Settings from "../assets/navbar/Settings"
 import TipsManager from "../assets/navbar/TipsManager"
+import Table from "../assets/navbar/Table"
+import { TbReorder } from "react-icons/tb"
+import { FaExpandArrowsAlt } from "react-icons/fa"
+import { FaArrowsAlt } from "react-icons/fa"
 
 export const navItems = [
   {
@@ -23,15 +27,23 @@ export const navItems = [
     to: "/menu",
   },
   {
-    name: "Table Manager",
-    image: <MdOutlineTableRestaurant className="h-[17px] w-[17px]" />,
-    to: "/table-manager",
+    name: "Tables",
+    // image: <MdOutlineTableRestaurant className="h-[17px] w-[17px]" />,
+    image: <Table />,
+    children: [
+      {
+        name: "Manager",
+        to: "tables/manager",
+        image: <FaArrowsAlt className="h-[15px] w-[15px]" />,
+      },
+    ],
+    to: "/tables",
   },
-  {
-    name: "Chair Manager",
-    image: <FaChair className="h-[17px] w-[17px]" />,
-    to: "/chair-manager",
-  },
+  // {
+  //   name: "Chair Manager",
+  //   image: <FaChair className="h-[17px] w-[17px]" />,
+  //   to: "/chair-manager",
+  // },
   {
     name: "Orders",
     image: <Order />,

@@ -102,3 +102,98 @@ input[type="color"]::-webkit-color-swatch {
   height: 20px !important;
   top: -0px !important;
 }
+
+
+@keyframes shake {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  12.5% {
+    transform: rotate(-15deg) scale(1.05);
+  }
+  25% {
+    transform: rotate(-25deg) scale(1.1);
+  }
+  37.5% {
+    transform: rotate(-15deg) scale(1.05);
+  }
+  50% {
+    transform: rotate(0deg) scale(1);
+  }
+  62.5% {
+    transform: rotate(15deg) scale(1.05);
+  }
+  75% {
+    transform: rotate(25deg) scale(1.1);
+  }
+  87.5% {
+    transform: rotate(15deg) scale(1.05);
+  }
+}
+
+.bell-icon {
+  animation: shake 0.5s ease-in-out infinite;
+}
+
+@keyframes scale {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform:  scale(1.1);
+  }
+}
+
+.bell-icon2 {
+  animation: scale 2.5s ease-in-out infinite;
+}
+
+.green-bg {
+  background-color: #f0f0f0;
+}
+
+.red-bg {
+  background-color: #eb262b;
+}
+
+.orange-bg {
+  background-color: #ffa500;
+}
+
+.rotating-border {
+  position: absolute;
+  border: 20px solid transparent;
+  border-top-color: white;
+  border-radius: 50%;
+  animation: rotateBorder 2s linear infinite;
+}
+
+@keyframes rotateBorder {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 6px;
+  border: 1px solid #dfdfdf;
+  border-radius: 2px;
+  margin-right: 2rem;
+  padding: 1rem;
+  padding-right: 2rem;
+}

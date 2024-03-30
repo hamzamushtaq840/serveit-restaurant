@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom"
-import Navbar from "./components/generic/Navbar"
 import AuthGuard from "./guards/AuthGuard"
 import ChairManager from "./pages/ChairManager"
 import Customers from "./pages/Customers"
@@ -19,6 +18,9 @@ import TimeSheet from "./pages/TimeSheet"
 import TipsManager from "./pages/TipsManager"
 import Inventory from "./pages/Inventory"
 import AllCategories from "./components/menu/AllCategories"
+import Tables from "./pages/Tables"
+import Navbar from "./components/navbar/Navbar"
+import TableManagerEdit from "./pages/TableManagerEdit"
 
 function App() {
   return (
@@ -34,7 +36,13 @@ function App() {
           <Route path="menu" element={<Menu />} />
           <Route path="menu/categories" element={<AllCategories />} />
           <Route path="tips-manager" element={<TipsManager />} />
-          <Route path="table-manager" element={<TableManager />} />
+
+          <Route path="/tables">
+            <Route index element={<Tables />} />
+            <Route path="manager" element={<TableManager />} />
+            <Route path="manager/edit" element={<TableManagerEdit />} />
+          </Route>
+
           <Route path="chair-manager" element={<ChairManager />} />
           <Route path="orders" element={<Orders />} />
           <Route path="customers" element={<Customers />} />
