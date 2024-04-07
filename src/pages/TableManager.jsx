@@ -130,7 +130,8 @@ const TableManager = () => {
         </button>
       </div>
       <div
-        className="h-full rounded-lg border bg-[#94a3b846] p-5"
+        style={{ boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px" }}
+        className="h-full rounded-lg  border bg-[#cccccc53] p-5"
         ref={parentRef}>
         {tables.map((v, index) => (
           <Rnd

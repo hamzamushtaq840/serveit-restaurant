@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import pictures from "../../assets/menu/pictures.png"
 import { BiEdit } from "react-icons/bi"
 import AddFeaturedItem from "./featuredItems/AddFeaturedItem"
+import FeaturedItems from "./featuredItems/FeaturedItems"
 
 const ImageSlider = () => {
   const [openModal, setOpenModal] = useState(false)
@@ -27,7 +28,8 @@ const ImageSlider = () => {
         className="absolute bottom-[-8px] right-[-10px] flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-primary text-white">
         <BiEdit className="text-button" />
       </div>
-      {openModal && <AddFeaturedItem setOpen={setOpenModal} />}
+      {openModal && <FeaturedItems setOpen={setOpenModal} />}
+      {/* {openModal && <AddFeaturedItem setOpen={setOpenModal} />} */}
     </div>
   )
 }

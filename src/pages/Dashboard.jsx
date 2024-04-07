@@ -7,6 +7,7 @@ import Analysis from "../components/dashboard/Analysis"
 import Employees from "../components/dashboard/Employees"
 import Revenue from "../components/dashboard/Revenue"
 import Inventory from "../components/dashboard/Inventory"
+import { IoIosArrowDown } from "react-icons/io"
 
 const Dashboard = () => {
   return (
@@ -23,7 +24,15 @@ const Dashboard = () => {
             <Today />
           </div>
           {/* top-left-bottom */}
-          <div>
+          <div className="flex flex-col bg-white">
+            <div className="flex gap-3 px-5 pt-5">
+              <span className="rubik text-xl font-semibold">
+                Analysis (Sales)
+              </span>
+              <span className="flex cursor-pointer items-center gap-2 text-grey">
+                Monthly <IoIosArrowDown />
+              </span>
+            </div>
             <Analysis />
           </div>
         </div>

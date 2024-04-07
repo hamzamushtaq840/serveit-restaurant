@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react"
 import * as echarts from "echarts/core"
 import { GaugeChart } from "echarts/charts"
 import { CanvasRenderer } from "echarts/renderers"
+import { IoIosArrowDown } from "react-icons/io"
 
 echarts.use([GaugeChart, CanvasRenderer])
 
@@ -74,11 +75,27 @@ const MyGaugeChart = () => {
   }, [])
 
   return (
-    <div
-      ref={chartRef}
-      style={{ width: "30%", height: "200px" }}
-      className="rounded bg-white shadow-lg"
-    />
+    <div className="flex min-h-[200px] w-[30%] flex-col justify-center rounded bg-white p-5 shadow-lg">
+      <div className="flex gap-3">
+        <span className="rubik text-xl font-semibold">Revenue</span>
+        <span className="flex cursor-pointer items-center gap-2 text-grey">
+          Monthly <IoIosArrowDown />
+        </span>
+      </div>
+      <span className="rubik text-xs text-grey">Total Expense</span>
+      <span className="rubik mb-2 mt-3 text-2xl font-bold text-primary">
+        $6078.76
+      </span>
+      <span className="text-sm text-[#82B941]">
+        Profit is 66% more than last month
+      </span>
+      <div
+        ref={chartRef}
+        style={{
+          width: "100%",
+          height: "170px",
+        }}></div>
+    </div>
   )
 }
 

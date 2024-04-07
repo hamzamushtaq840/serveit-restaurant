@@ -220,16 +220,16 @@ const TableManagerEdit = () => {
               zIndex: 10,
             }}
             bounds="parent"
-            // className=" hover:outline hover:outline-1"
-            minHeight={150}
-            minWidth={150}
+            // className=" "
+            minHeight={120}
+            minWidth={100}
             size={{ width: item.width, height: item.height }}
             position={{ x: item.x, y: item.y }}
             onDragStop={(e, d) => handleDragStop(e, d, index)}
             onResize={(e, direction, ref, delta, position) =>
               handleResize(e, direction, ref, delta, position, index)
             }
-            className="relative flex h-[155px] justify-between rounded-lg border p-2 py-1 hover:cursor-pointer">
+            className="relative flex h-[155px] justify-between rounded-lg border p-2 py-1 hover:cursor-pointer hover:outline hover:outline-1">
             <div className="flex flex-1 flex-col items-center justify-center gap-1">
               <div
                 style={{ backgroundColor: item.server.color }}
@@ -247,7 +247,7 @@ const TableManagerEdit = () => {
               onClick={() => {
                 setDeleteModal(true)
               }}
-              className="absolute right-[-1px] top-[-1px] cursor-pointer rounded bg-red-300 p-2 text-white hover:cursor-pointer">
+              className="absolute right-[3px] top-[2px] cursor-pointer rounded bg-red-300 p-2 text-white hover:cursor-pointer">
               <RiDeleteBin3Line className="text-red-500 " />
             </div>
           </Rnd>
